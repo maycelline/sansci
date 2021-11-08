@@ -66,6 +66,9 @@
                                                         } else {
                                                             var str = document.getElementById("roomName").value;
                                                         }
+                                                        if (str == "") {
+                                                            return;
+                                                        }
                                                         var text = "<br><label style='margin-right: 38px;'>Table Type : </label>";
                                                         if (str == "small") {
                                                             text += "<select name='tableSelected' id='tableSelected' required=''>";
@@ -73,7 +76,7 @@
                                                             text += "<option value='uShape' selected>U-Shape Table</option></select>";
                                                         } else if (str == "medium") {
                                                             text += '<select name="tableSelected" id="tableSelected" required=""><option value=""disabled>Choose Room</option><option value="uShape" selected>U-Shape Table</option><option value="roundShape">Rounded Table</option></select>';
-                                                        } else {
+                                                        } else if (str == "large") {
                                                             text += '<select name="tableSelected" id="tableSelected" required=""><option value=""disabled>Choose Room</option><option value="uShape" selected>U-Shape Table</option><option value="roundShape">Rounded Table</option><option value="boardRoom">Boardroom Table</option><option value="theatreTable">Theatre Table</option></select>';
                                                         }
                                                         document.getElementById('tableChoose').innerHTML = text;
@@ -84,13 +87,16 @@
                                                         } else {
                                                             var str = document.getElementById("roomName").value;
                                                         }
+                                                        if (str == "") {
+                                                            return;
+                                                        }
                                                         var text = "";
                                                         if (str == "small") {
                                                             text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 2 Charger Terminals<br>";
                                                         } else if (str == "medium") {
                                                             text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 4 Charger Terminal<br>";
                                                             text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Own Wifi<br>";
-                                                        } else {
+                                                        } else if (str == "large") {
                                                             text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 10 Charger Terminal<br>";
                                                             text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Own Wifi<br>";
                                                             text += "<input type='checkbox' id = 'AC' name = 'AC' value='AC' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Double AC<br>";
@@ -101,7 +107,7 @@
                                                 <fieldset>
                                                     <br><label style="margin-right: 28px;">Room Type : </label>
                                                     <select name="roomName" id="roomName"
-                                                        onchange="showTableList(); showAttributeList()" required="">
+                                                        onchange="showTableList(''); showAttributeList('')" required="">
                                                         <?php
                                                             $selected = $_GET['selected'];
                                                             echo "<script type='text/javascript'>";
@@ -109,9 +115,9 @@
                                                             echo "showAttributeList('$selected');";
                                                             echo "</script>";
                                                         ?>
-                                                        <option disabled selected>Choose Room
+                                                        <option value="" disabled selected>Choose Room
                                                         </option>
-                                                        <option value="small" <?php if($selected=='small') echo 'selected="selected"';?>">Small Room
+                                                        <option value="small" <?php if($selected=='small') echo 'selected="selected"';?>>Small Room
                                                         </option>
                                                         <option value="medium" <?php if($selected=='medium') echo 'selected="selected"';?>>Medium Room
                                                         </option>
