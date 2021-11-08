@@ -41,39 +41,7 @@
   </div> -->
     <!-- ***** Preloader End ***** -->
 
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <!-- <a href="index.html" class="logo">
-              <img src="assets/images/logo.png">
-            </a> -->
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#about">About</a></li>
-                            <li class="scroll-to-section"><a href="#portfolio">See Facilities</a></li>
-                            <li class="scroll-to-section"><a href="#pricing">Pricing</a></li>
-                            <li class="scroll-to-section"><a href="#contact">Reservation</a></li>
-                            <li class="scroll-to-section">
-                                <div class="main-red-button-hover"><a href="#contact">LOGIN</a></div>
-                            </li>
-                        </ul>
-
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
+    <?php include('header.php'); ?>
 
     <div id="about" class="about-us section">
         <div class="container">
@@ -89,12 +57,16 @@
                             <div class="row">
                                 <div id="contact" class="section">
                                     <div class="container">
-                                        <div class="row" style="font-size: 15px;">
+                                        <div class="row" style="font-size: 15px; width: 125%;">
                                             <form id="update" action="" method="get">
                                                 <script>
-                                                    function showTableList() {
-                                                        var str = document.getElementById("roomName").value;
-                                                        var text = "<br><label style='margin-right: 38px;'>Jenis Meja : </label>";
+                                                    function showTableList(value) {
+                                                        if(value != ""){
+                                                            var str = value;
+                                                        } else {
+                                                            var str = document.getElementById("roomName").value;
+                                                        }
+                                                        var text = "<br><label style='margin-right: 38px;'>Table Type : </label>";
                                                         if (str == "small") {
                                                             text += "<select name='tableSelected' id='tableSelected' required=''>";
                                                             text += "<option value='' disabled>Choose Room</option>";
@@ -106,8 +78,12 @@
                                                         }
                                                         document.getElementById('tableChoose').innerHTML = text;
                                                     }
-                                                    function showAttributeList() {
-                                                        var str = document.getElementById("roomName").value;
+                                                    function showAttributeList(value) {
+                                                        if(value != ""){
+                                                            var str = value;
+                                                        } else {
+                                                            var str = document.getElementById("roomName").value;
+                                                        }
                                                         var text = "";
                                                         if (str == "small") {
                                                             text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 2 Charger Terminals<br>";
@@ -126,13 +102,20 @@
                                                     <br><label style="margin-right: 28px;">Room Type : </label>
                                                     <select name="roomName" id="roomName"
                                                         onchange="showTableList(); showAttributeList()" required="">
+                                                        <?php
+                                                            $selected = $_GET['selected'];
+                                                            echo "<script type='text/javascript'>";
+                                                            echo "showTableList('$selected');";
+                                                            echo "showAttributeList('$selected');";
+                                                            echo "</script>";
+                                                        ?>
                                                         <option disabled selected>Choose Room
                                                         </option>
-                                                        <option value="small">Small Room
+                                                        <option value="small" <?php if($selected=='small') echo 'selected="selected"';?>">Small Room
                                                         </option>
-                                                        <option value="medium">Medium Room
+                                                        <option value="medium" <?php if($selected=='medium') echo 'selected="selected"';?>>Medium Room
                                                         </option>
-                                                        <option value="large">Large Room
+                                                        <option value="large" <?php if($selected=='large') echo 'selected="selected"';?>>Large Room
                                                         </option>
                                                     </select>
                                                 </fieldset>
@@ -192,6 +175,12 @@
                                                         class="main-button" style="width:92%">Order</button><br><br>
                                                     <br>
                                                 </fieldset>
+                                                <?php
+                                                    echo "<script type='text/javascript'>";
+                                                    echo "showTableList('$selected');";
+                                                    echo "showAttributeList('$selected');";
+                                                    echo "</script>";
+                                                ?>
                                             </form>
                                         </div>
                                     </div>
@@ -254,6 +243,10 @@
             </footer>
 </body>
 <style>
+    .form {
+        width: 125%;
+    }
+
     .container h2 {
         margin: auto;
         text-align: center;

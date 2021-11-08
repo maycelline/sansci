@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +11,7 @@
     <meta name="author" content="">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Sansci | Working Space and Cafe</title>
+    <title>Sansci | Meeting Room, Working Space, and Cafe</title>
     
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -47,18 +51,18 @@
               <div class="owl-carousel owl-banner">
                 <div class="item header-text">
                   <h6>MEETING ROOM</h6>
-                  <h2>Gunakan ruang meeting untuk <em>rapat</em> yang <span>berkualitas</span></h2>
-                  <p><a rel="nofollow" href="#pricing">Lihat fasilitas</a> yang cocok untuk digunakan oleh kamu dan teman-teman setimmu!</p>
+                  <h2>Use our <em>meeting room</em> for your <span>high quality meeting</span></h2>
+                  <p>Choose our <a href="#portfolio">facilities</a> that suitable for your team.</p>
                 </div>
                 <div class="item header-text">
                   <h6>CO-WORKING SPACE</h6>
-                  <h2>Menjadi lebih <em>produktif</em> di <span>SANSCI workspace</span></h2>
-                  <p>Lebih fokus mengerjakan tugas di SANSCI. Dengan suasana yang nyaman, akan membuat mood kamu semakin baik dalam mengerjakan tugas.</p>
+                  <h2>Be more <em>productive</em> at <span>SANSCI co-working space</span></h2>
+                  <p>Affordable, comfortable, and cozy shared working space to improve your mood.</p>
                 </div>
                 <div class="item header-text">
                   <h6>CAFE</h6>
-                  <h2>Buat harimu <em>lebih seru</em> dengan nongkrong di <span>SANSCI</span></h2>
-                  <p>'Saat kopi mendingin, disitulah percakapan kita semakin hangat'. Ajak temanmu dan ciptakan nongkrong asik di SANSCI.</p>
+                  <h2><em>Level up your day</em> by hang out at <span>SANSCI</span></h2>
+                  <p>Hang out together with your friend and a cup of coffee.</p>
                 </div>
               </div>
             </div>
@@ -134,7 +138,7 @@
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <div class="section-heading">
-            <h2>Fasilitas <em>SANSCI</em> untuk pengguna.</h2>
+            <h2><em>SANSCI</em> <span>FACILITIES<span></h2>
             <span>Choose Yours</span>
           </div>
         </div>
@@ -150,7 +154,7 @@
                 <div class="hover-effect">
                   <div class="inner-content">
                     <h4>Free Wifi</h4>
-                    <span>Untuk kamu kaum gratisan</span>
+                    <span>For you who like free things</span>
                   </div>
                 </div>
               </div>
@@ -160,8 +164,8 @@
                 <img src="assets/images/portfolio-01.jpg" alt="">
                 <div class="hover-effect">
                   <div class="inner-content">
-                    <h4>Ruang Nyaman</h4>
-                    <span>Untuk mood kerja<br>yang lebih baik</span>
+                    <h4>Cozy Room</h4>
+                    <span>Cozy atmosphere will increase your mood</span>
                   </div>
                 </div>
               </div>
@@ -227,7 +231,7 @@
                 <div class="hover-effect">
                   <div class="inner-content">
                     <h4>Coffee Maker</h4>
-                    <span>Machine for brewing coffee</span>
+                    <span>Machine for<br>brewing coffee</span>
                   </div>
                 </div>
               </div>
@@ -249,7 +253,7 @@
                 <div class="hover-effect">
                   <div class="inner-content">
                     <h4>Co-working Space</h4>
-                    <span>Affordable shared workspace<br>to escape the isolation of a home office</span>
+                    <span>Affordable shared workspace to escape<br>the isolation of a home office</span>
                   </div>
                 </div>
               </div>
@@ -260,7 +264,7 @@
                 <div class="hover-effect">
                   <div class="inner-content">
                     <h4>Indoor Cafe</h4>
-                    <span>Aesthetic and cozy indoor cafe</span>
+                    <span>Aesthetic and cozy<br>indoor cafe</span>
                   </div>
                 </div>
               </div>
@@ -271,7 +275,7 @@
                 <div class="hover-effect">
                   <div class="inner-content">
                     <h4>Outdoor Cafe</h4>
-                    <span>Instagrammable outdoor cafe</span>
+                    <span>Instagrammable<br>outdoor cafe</span>
                   </div>
                 </div>
               </div>
@@ -316,7 +320,7 @@
               <li style="font-size: 10px;">Including U-Shape Table<br>&nbsp;</li>
             </ul>
             <div class="main-blue-button-hover">
-              <a href="#">Booking</a>
+              <a href="order.php?selected=small">Book</a>
             </div>
           </div>
         </div>
@@ -337,7 +341,7 @@
               <li style="font-size: 10px;">Including Round Table/U-Shape Table<br>&nbsp;</li>
             </ul>
             <div class="main-blue-button-hover">
-              <a href="#">Booking</a>
+              <a href="order.php?selected=medium">Book</a>
             </div>
           </div>
         </div>
@@ -358,7 +362,7 @@
               <li style="font-size: 10px;">Including Boardroom Table/Theatre<br>Table/Round Table/U-Shape Table</li>
             </ul>
             <div class="main-blue-button-hover">
-              <a href="#">Booking</a>
+              <a href="order.php?selected=large">Book</a>
             </div>
           </div>
         </div>
@@ -384,10 +388,10 @@
                     <li class="active">
                       <div>
                         <div class="thumb">
-                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/JynGuQx4a1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/2z0UjKGFCuQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           <div class="overlay-effect">
-                            <a href="#"><h4>Project One</h4></a>
-                            <span>SEO &amp; Marketing</span>
+                            <a href="#"><h4>Co-Working Space</h4></a>
+                            <span>Shared workspace</span>
                           </div>
                         </div>
                       </div>
@@ -395,10 +399,10 @@
                     <li>
                       <div>
                         <div class="thumb">
-                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/RdJBSFpcO4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/azJ-WlU3UPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           <div class="overlay-effect">
-                            <a href="#"><h4>Second Project</h4></a>
-                            <span>Advertising &amp; Marketing</span>
+                            <a href="#"><h4>Co-working Interiors</h4></a>
+                            <span>Convenient facilities</span>
                           </div>
                         </div>
                       </div>
@@ -406,10 +410,10 @@
                     <li>
                       <div>
                         <div class="thumb">
-                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/ZlfAjbQiL78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/7XIDY0LsuEc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           <div class="overlay-effect">
-                            <a href="#"><h4>Project Three</h4></a>
-                            <span>Digital &amp; Marketing</span>
+                            <a href="#"><h4>Exclusive Cafe</h4></a>
+                            <span>Try our exclusive milk tea</span>
                           </div>
                         </div>
                       </div>
@@ -417,10 +421,10 @@
                     <li>
                       <div>
                         <div class="thumb">
-                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/mx1WseE7-0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/JtfCcc0fuPw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           <div class="overlay-effect">
-                            <a href="#"><h4>Fourth Project</h4></a>
-                            <span>SEO &amp; Advertising</span>
+                            <a href="#"><h4>Outdoor Cafe</h4></a>
+                            <span>Soothing and fresh wind</span>
                           </div>
                         </div>
                       </div>
@@ -433,8 +437,8 @@
                       <div class="thumb">
                         <img src="assets/images/video-thumb-01.png" alt="">
                         <div class="inner-content">
-                          <h4>Project One</h4>
-                          <span>SEO &amp; Marketing</span>
+                          <h4>Co-Working Space</h4>
+                          <span>Shared workspace</span>
                         </div>
                       </div>
                     </div>
@@ -442,8 +446,8 @@
                       <div class="thumb">
                         <img src="assets/images/video-thumb-02.png" alt="">
                         <div class="inner-content">
-                          <h4>Second Project</h4>
-                          <span>Advertising &amp; Marketing</span>
+                          <h4>Co-Working Interiors</h4>
+                          <span>Convenient facilities</span>
                         </div>
                       </div>
                     </div>
@@ -451,8 +455,8 @@
                       <div class="thumb">
                         <img src="assets/images/video-thumb-03.png" alt="Marketing">
                         <div class="inner-content">
-                          <h4>Project Three</h4>
-                          <span>Digital &amp; Marketing</span>
+                          <h4>Exclusive Cafe</h4>
+                          <span>Try our exclusive milk tea</span>
                         </div>
                       </div>
                     </div>
@@ -460,8 +464,8 @@
                       <div class="thumb">
                         <img src="assets/images/video-thumb-04.png" alt="SEO Work">
                         <div class="inner-content">
-                          <h4>Fourth Project</h4>
-                          <span>SEO &amp; Advertising</span>
+                          <h4>Outdoor Cafe</h4>
+                          <span>Soothing and fresh wind</span>
                         </div>
                       </div>
                     </div>
@@ -475,18 +479,17 @@
     </div>
   </div>
 
+<?php
+    if(!$_SESSION){ ?>
+
   <div id="contact" class="contact-us section">
     <div class="container">
       <div class="row">
         <div class="col-lg-7">
           <div class="section-heading">
-            <h2>Feel free to <em>Contact</em> us via the <span>HTML form</span></h2>
+            <h2><em>Login</em> to <span>book</span></h2>
             <div id="map">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0104677319796!2d107.61391011477274!3d-6.889348795021796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc48b605e8e3d2915!2sInstitut%20Teknologi%20Harapan%20Bangsa!5e0!3m2!1sen!2sid!4v1636243252424!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div class="info">
-              <span><i class="fa fa-phone"></i> <a href="#">010-020-0340<br>090-080-0760</a></span>
-              <span><i class="fa fa-envelope"></i> <a href="#">info@company.com<br>mail@company.com</a></span>
             </div>
           </div>
         </div>
@@ -515,7 +518,7 @@
           </form>
         </div>
         <div class="col-lg-5 align-self-center" id="register">
-          <form id="contact" action="" method="get">
+          <form id="contact" action="register.php" method="post">
             <div class="row">
               <div class="col-lg-12">
                 <fieldset>
@@ -539,6 +542,11 @@
               </div>
               <div class="col-lg-12">
                 <fieldset>
+                  <input type="password" name="retype" id="retype" placeholder="Re-Type Your Password" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
                   <input type="phonenumber" name="phonenumber" id="phonenumber" placeholder="Your Phone Number" autocomplete="on" required>
                 </fieldset>
               </div>
@@ -555,13 +563,9 @@
         </div>
       </div>
     </div>
-    <div class="contact-dec">
-      <img src="assets/images/contact-dec.png" alt="">
-    </div>
-    <div class="contact-left-dec">
-      <img src="assets/images/contact-left-dec.png" alt="">
-    </div>
   </div>
+
+  <?php } ?>
 
   <div class="footer-dec">
     <img src="assets/images/footer-dec.png" alt="">
@@ -582,22 +586,13 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="services footer-item">
-            
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="community footer-item">
-          </div>
-        </div>
-        <div class="col-lg-3">
+        <div class="col-lg-12">
           <div class="subscribe-newsletters footer-item">
-            <h4>Miscellaneous</h4>
-            <ul>
-              <li><a href="https://www.ithb.ac.id/study-program/Teknik/Informatika-2">Informatics ITHB</a></li>
-              <li><a href="https://linktr.ee/SansCo">Sans.Co</a></li>
-              <li><a href="https://www.instagram.com/ayamgeprekbebass/">Ayam Geprek Bebas</a></li>
+            <ul class="misc-class">
+              <h4>Miscellaneous Things Related to the Deboras</h4>
+              <li class="misc"><a href="https://www.ithb.ac.id/study-program/Teknik/Informatika-2">Informatics ITHB</a></li>
+              <li class="misc"><a href="https://linktr.ee/SansCo">Sans.Co</a></li>
+              <li class="misc"><a href="https://www.instagram.com/ayamgeprekbebass/">Ayam Geprek Bebas</a></li>
             </ul>
           </div>
         </div>
