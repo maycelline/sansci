@@ -1,6 +1,13 @@
 <?php
     session_start();
 
+    if (empty($_SESSION['userId'])) {
+        echo "<script type='text/javascript'>";
+        echo "confirm('Please login to continue!');";
+        echo "window.location.href = 'index.php#contact';";
+        echo "</script>";
+    }
+
     $roomName = $_POST["roomName"];
     $capacitySelected = $_POST["capacitySelected"];
     $paymentMethod = $_POST["paymentMethod"];
