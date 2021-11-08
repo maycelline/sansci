@@ -90,7 +90,7 @@
                                                 <script>
                                                     function showTableList() {
                                                         var str = document.getElementById("roomName").value;
-                                                        var text = "<br><label style='margin-right: 55px;'>Jenis Meja : </label>";
+                                                        var text = "<br><label style='margin-right: 38px;'>Jenis Meja : </label>";
                                                         if (str == "small") {
                                                             text += "<select name='tableSelected' id='tableSelected' required=''>";
                                                             text += "<option value='' disabled>Choose Room</option>";
@@ -119,10 +119,10 @@
                                                     }
                                                 </script>
                                                 <fieldset>
-                                                    <br><label style="margin-right: 24px;">Tipe Ruangan : </label>
+                                                    <br><label style="margin-right: 28px;">Room Type : </label>
                                                     <select name="roomName" id="roomName"
                                                         onchange="showTableList(); showAttributeList()" required="">
-                                                        <option disabled selected>Choose Room Size
+                                                        <option disabled selected>Choose Room
                                                         </option>
                                                         <option value="small">Small Room
                                                         </option>
@@ -135,7 +135,7 @@
 
                                                 <fieldset>
                                                     <div id="tableChoose">
-                                                        <br><label style="margin-right: 50px;">Jenis Meja : </label>
+                                                        <br><label style="margin-right: 30px;">Table Type : </label>
                                                         <select name="tableSelected" id="tableSelected" required="">
                                                             <option disable selected>No Room Choosed</option>
                                                         </select>
@@ -143,7 +143,7 @@
                                                 </fieldset>
                                                 
                                                 <fieldset>
-                                                    <br>Tambahan : <div id="attributeChoose" style="margin-top: 15px;">
+                                                    <br>Additional : <div id="attributeChoose" style="margin-top: 15px;">
                                                     </div>
                                                     <input type="checkbox" name="micSpeaker" id="micSpeaker"
                                                         value="micSpeaker"
@@ -167,11 +167,11 @@
                                                     Coffee Maker
                                                 </fieldset>
                                                 <fieldset>
-                                                    Tanggal Booking : <input type="date" name="bookedDate"
+                                                    <label style="margin-right: 23px;">Booked Date : </label><input type="date" name="bookedDate"
                                                         id="bookedDate" placeholder="Tanggal Booking" required="">
                                                 </fieldset>
                                                 <fieldset>
-                                                    <label style="margin-right: 25px;">Pembayaran : </label>
+                                                    <label style="margin-right: 45px;">Payment : </label>
                                                     <select name="paymentMethod" id="paymentMethod" required="">
                                                         <option disabled selected>Choose Payment Method
                                                         </option>
