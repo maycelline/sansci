@@ -90,6 +90,9 @@
                                                         } else {
                                                             var str = document.getElementById("roomName").value;
                                                         }
+                                                        if (str == "") {
+                                                            return;
+                                                        }
                                                         var text = "";
                                                         if (str == "small") {
                                                             text += "<input type='checkbox' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 2 Charger Terminals<br>";
@@ -141,9 +144,9 @@
                                                             echo "showAttributeList('$selected');";
                                                             echo "</script>";
                                                         ?>
-                                                        <option disabled selected>Choose Room
+                                                        <option value="" disabled selected>Choose Room
                                                         </option>
-                                                        <option value="small" <?php if($selected=='small') echo 'selected="selected"';?>">Small Room
+                                                        <option value="small" <?php if($selected=='small') echo 'selected="selected"';?>>Small Room
                                                         </option>
                                                         <option value="medium" <?php if($selected=='medium') echo 'selected="selected"';?>>Medium Room
                                                         </option>
