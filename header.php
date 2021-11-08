@@ -14,13 +14,14 @@
               <li class="scroll-to-section"><a href="index.php#top" class="active">Home</a></li>
               <li class="scroll-to-section"><a href="index.php#about">About</a></li>
               <li class="scroll-to-section"><a href="index.php#portfolio">See Facilities</a></li>
-              <li class="scroll-to-section"><a href="index.php#pricing">Pricing</a></li> 
-              <li class="scroll-to-section"><a href="index.php#contact">Reservation</a></li> 
+              <li class="scroll-to-section"><a href="index.php#pricing">Pricing</a></li>
               <?php
                 if(!$_SESSION){
                     echo '<li class="scroll-to-section"><div class="main-red-button-hover"><a href="index.php#contact">LOGIN</a></div></li>';
                 } else {
-                    echo '<li class="scroll-to-section"><div class="main-red-button-hover"><a href="logout.php">LOGOUT</a></div></li>';
+                    echo '<li><a href="orderRoom.php">Order a room</a></li>
+                    <li class="scroll-to-section"><a href="orderTable.php">Order a table</a></li>
+                    <li class="scroll-to-section"><div class="main-red-button-hover"><a href="logout.php">LOGOUT</a></div></li>';
                 }
               ?>
             </ul>        
