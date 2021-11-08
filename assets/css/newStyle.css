@@ -3,12 +3,14 @@ div > div#pricing > div.container > div.row > div.col-lg-4 > div > ul.desc > li 
 }
 
 div.new-container {
+    z-index: 1;
     margin-left: 40%;
     width: 270%;
     text-align: center;
 }
 
 div.media a {
+    z-index: -1;
     float: left;
     height: 130px;
     width: 130px;
@@ -32,6 +34,18 @@ div.may a {
     background-position: -458px -218px;
 }
 
-.display-block {
-    display: inline-block;
+footer > div > div > div > div > ul.misc-class {
+    text-align: right;
+    margin-top: 50px;
+}
+
+footer > div > div > div > div > ul > li.misc {
+    margin: 0px;
+    padding: 0px 20px;
+    display: inline;
+}
+
+div > div > div > div > div.new-item {
+    width: 200px;
+    color: pink;
 }
