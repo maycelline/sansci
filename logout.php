@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if (!$_SESSION) {
+    if ($_SESSION == false) {
         echo "window.alert('Your session is done, log in first!')";
         header("Location: index.php");
     } else {
