@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="assets/css/animated.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/newStyle.css">
+
+    <!-- Additional jQuery -->
+    <link href="http://wvega.github.io/timepicker/resources/jquery-timepicker/jquery.timepicker.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -58,50 +61,79 @@
                                 <div id="contact" class="section">
                                     <div class="container">
                                         <div class="row" style="font-size: 15px; width: 125%;">
-                                            <form id="update" action="" method="get">
+                                            <form id="update" action="submitOrder.php" method="post">
                                                 <script>
                                                     function showTableList(value) {
-                                                        if(value != ""){
-                                                            var str = value;
-                                                        } else {
-                                                            var str = document.getElementById("roomName").value;
-                                                        }
-                                                        var text = "<br><label style='margin-right: 38px;'>Table Type : </label>";
-                                                        if (str == "small") {
-                                                            text += "<select name='tableSelected' id='tableSelected' required=''>";
-                                                            text += "<option value='' disabled>Choose Room</option>";
-                                                            text += "<option value='uShape' selected>U-Shape Table</option></select>";
-                                                        } else if (str == "medium") {
-                                                            text += '<select name="tableSelected" id="tableSelected" required=""><option value=""disabled>Choose Room</option><option value="uShape" selected>U-Shape Table</option><option value="roundShape">Rounded Table</option></select>';
-                                                        } else {
-                                                            text += '<select name="tableSelected" id="tableSelected" required=""><option value=""disabled>Choose Room</option><option value="uShape" selected>U-Shape Table</option><option value="roundShape">Rounded Table</option><option value="boardRoom">Boardroom Table</option><option value="theatreTable">Theatre Table</option></select>';
-                                                        }
-                                                        document.getElementById('tableChoose').innerHTML = text;
-                                                    }
-                                                    function showAttributeList(value) {
-                                                        if(value != ""){
+                                                        if(value != undefined){
                                                             var str = value;
                                                         } else {
                                                             var str = document.getElementById("roomName").value;
                                                         }
                                                         var text = "";
                                                         if (str == "small") {
-                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 2 Charger Terminals<br>";
+                                                            text += "<select name='tableSelected' id='tableSelected' required=''>";
+                                                            text += "<option value='' disabled>Choose Room</option>";
+                                                            text += "<option value='U-Shape Table' selected>U-Shape Table</option></select>";
                                                         } else if (str == "medium") {
-                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 4 Charger Terminal<br>";
-                                                            text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Own Wifi<br>";
+                                                            text += '<select name="tableSelected" id="tableSelected" required=""><option value=""disabled>Choose Room</option><option value="U-Shape Table" selected>U-Shape Table</option><option value="Round Table">Round Table</option></select>';
+                                                        } else if (str == "large") {
+                                                            text += '<select name="tableSelected" id="tableSelected" required=""><option value=""disabled>Choose Room</option><option value="U-Shape Table" selected>U-Shape Table</option><option value="Round Table">Round Table</option><option value="Theatre Table">Theatre Table</option><option value="Boardroom Table">Boardroom Table</option></select>';
                                                         } else {
-                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 10 Charger Terminal<br>";
-                                                            text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Own Wifi<br>";
-                                                            text += "<input type='checkbox' id = 'AC' name = 'AC' value='AC' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Double AC<br>";
+                                                            text += "<select name='tableSelected' id='tableSelected' required=''>";
+                                                            text += "<option value='' disabled>Choose Room</option></select>";
+                                                        }
+                                                        document.getElementById('tableChoose').innerHTML = text;
+                                                    }
+                                                    function showAttributeList(value) {
+                                                        if(value != undefined){
+                                                            var str = value;
+                                                        } else {
+                                                            var str = document.getElementById("roomName").value;
+                                                        }
+                                                        var text = "";
+                                                        if (str == "small") {
+                                                            text += "<input type='checkbox' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 2 Charger Terminals<br>";
+                                                        } else if (str == "medium") {
+                                                            text += "<input type='checkbox' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 4 Charger Terminal<br>";
+                                                            text += "<input type='checkbox' name = 'wifi' value='wifi' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Own Wifi<br>";
+                                                        } else {
+                                                            text += "<input type='checkbox' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 10 Charger Terminal<br>";
+                                                            text += "<input type='checkbox' name = 'wifi' value='wifi' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Own Wifi<br>";
+                                                            text += "<input type='checkbox' name = 'AC' value='AC' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Double AC<br>";
                                                         }
                                                         document.getElementById('attributeChoose').innerHTML = text;
                                                     }
+                                                    function showCapacityList(value){
+                                                        if(value != undefined){
+                                                            var str = value;
+                                                        } else {
+                                                            var str = document.getElementById("roomName").value;
+                                                        }
+                                                        var text = "";
+                                                        if (str == "small") {
+                                                            text += "<select name='capacitySelected' id='capacitySmall' required=''>";
+                                                            text += "<option value='' disabled>Choose Capacity</option>";
+                                                            text += "<option value='10' selected>10</option></select>";
+                                                        } else if (str == "medium") {
+                                                            text += '<select name="capacitySelected" id="capacityMedium" required="">';
+                                                            text += '<option value=""disabled>Choose Capacity</option>';
+                                                            text += '<option value="20" selected>20</option>';
+                                                        } else if (str == "large") {
+                                                            text += '<select name="capacitySelected" id="capacityLarge" required="">';
+                                                            text += '<option value=""disabled>Choose Capacity</option>';
+                                                            text += '<option value="30" selected>30</option>';
+                                                            text += '<option value="40">40</option>';
+                                                        } else {
+                                                            text += "<select name='capacitySelected' required=''>";
+                                                            text += "<option value='' disabled>Choose Capacity</option></select>";
+                                                        }
+                                                        document.getElementById('capacityChoose').innerHTML = text;
+                                                    }
                                                 </script>
                                                 <fieldset>
-                                                    <br><label style="margin-right: 28px;">Room Type : </label>
+                                                    <br><label style="margin-right: 28px;">Room Type&nbsp;&nbsp;:&nbsp;&nbsp; </label>
                                                     <select name="roomName" id="roomName"
-                                                        onchange="showTableList(); showAttributeList()" required="">
+                                                        onchange="showTableList(); showAttributeList(); showCapacityList();" required="">
                                                         <?php
                                                             $selected = $_GET['selected'];
                                                             echo "<script type='text/javascript'>";
@@ -121,10 +153,19 @@
                                                 </fieldset>
 
                                                 <fieldset>
-                                                    <div id="tableChoose">
-                                                        <br><label style="margin-right: 30px;">Table Type : </label>
+                                                    <br><label style="margin-right: 28px;">Table Type&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;</label>
+                                                    <div id="tableChoose" style="display: inline;">
                                                         <select name="tableSelected" id="tableSelected" required="">
                                                             <option disable selected>No Room Choosed</option>
+                                                        </select>
+                                                    </div>
+                                                </fieldset>
+
+                                                <fieldset>
+                                                    <br><label style="margin-right: 28px;">Capacity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;</label>
+                                                    <div id="capacityChoose" style="display: inline;">
+                                                        <select name="capacitySelected" id="capacitySelected" required="">
+                                                            <option disable selected>No Capacity Choosed</option>
                                                         </select>
                                                     </div>
                                                 </fieldset>
@@ -133,40 +174,44 @@
                                                     <br>Additional : <div id="attributeChoose" style="margin-top: 15px;">
                                                     </div>
                                                     <input type="checkbox" name="micSpeaker" id="micSpeaker"
-                                                        value="micSpeaker"
+                                                        value="Microphone and Speaker"
                                                         style="margin-left: -50px; margin-right: -55px; height: 15px">
                                                     Microphone and Speaker<br>
                                                     <input type="checkbox" name="cableConn" id="cableConn"
-                                                        value="cableConn"
+                                                        value="Cable Connector"
                                                         style="margin-left: -50px; margin-right: -55px; height: 15px">
                                                     Cable Connector<br>
                                                     <input type="checkbox" name="LCDProjector" id="LCDProjector"
-                                                        value="LCDProjector"
+                                                        value="LCD Projector Screen"
                                                         style="margin-left: -50px; margin-right: -55px; height: 15px">
                                                     LCD Projector Screen<br>
-                                                    <input type="checkbox" name="FlipChartMarkers" id="FlipChartMarkers"
-                                                        value="FlipChartMarkers"
+                                                    <input type="checkbox" name="flipchartMarkers" id="flipchartMarkers"
+                                                        value="Flipchart and Markers"
                                                         style="margin-left: -50px; margin-right: -55px; height: 15px">
                                                     Flipchart and Markers<br>
-                                                    <input type="checkbox" name="CoffeeMaker" id="CoffeeMaker"
-                                                        value="CoffeeMaker"
+                                                    <input type="checkbox" name="coffeeMaker" id="coffeeMaker"
+                                                        value="Coffee Maker"
                                                         style="margin-left: -50px; margin-right: -55px; height: 15px">
                                                     Coffee Maker
                                                 </fieldset>
                                                 <fieldset>
-                                                    <label style="margin-right: 23px;">Booked Date : </label><input type="date" name="bookedDate"
-                                                        id="bookedDate" placeholder="Tanggal Booking" required="">
+                                                    <label style="margin-right: 23px;">Booked Date : </label>
+                                                    <input type="date" name="bookedDate" id="bookedDate" required="">
+                                                </fieldset>
+                                                <fieldset>
+                                                    <label style="margin-right: 23px;">Booked Time : </label>
+                                                    <input type="time" name="bookedTime" id="bookedTime" value="11:00" required>
                                                 </fieldset>
                                                 <fieldset>
                                                     <label style="margin-right: 45px;">Payment : </label>
                                                     <select name="paymentMethod" id="paymentMethod" required="">
                                                         <option disabled selected>Choose Payment Method
                                                         </option>
-                                                        <option value="transferBCA">Transfer BCA
+                                                        <option value="Transfer - BCA">Transfer - BCA
                                                         </option>
-                                                        <option value="ovo">OVO
+                                                        <option value="OVO">OVO
                                                         </option>
-                                                        <option value="gopay">GoPay
+                                                        <option value="GoPay">GoPay
                                                         </option>
                                                     </select>
                                                 </fieldset>
@@ -179,6 +224,7 @@
                                                     echo "<script type='text/javascript'>";
                                                     echo "showTableList('$selected');";
                                                     echo "showAttributeList('$selected');";
+                                                    echo "showCapacityList('$selected');";
                                                     echo "</script>";
                                                 ?>
                                             </form>
@@ -190,57 +236,41 @@
                     </div>
                 </div>
             </div>
-            <footer style="margin-top: 100px;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 display-block">
-                            <div class="about footer-item">
-                                <div class="new-container">
-                                    <p>Deboras Team - <a href="#mail"">deboras@mail.com</a></p>
-                                <div class=" media fel"><a href="https://www.instagram.com/feli.g_25/" target="_blank"
-                                                title="Feliciana Gunadi"></a></div>
-                                <div class="media sil"><a href="https://www.instagram.com/silviprisillia4/"
-                                        target="_blank" title="Silvi Prisillia Louismono"></a></div>
-                                <div class="media yen"><a href="https://www.instagram.com/yen_aj29/" target="_blank"
-                                        title="Yendistia Angelia Julianti"></a></div>
-                                <div class="media jes"><a href="https://www.instagram.com/jesslynowen/" target="_blank"
-                                        title="Jesslyn Nadya Owen"></a></div>
-                                <div class="media may"><a href="https://www.instagram.com/mariamaycelline/"
-                                        target="_blank" title="Maycelline Selvyanti Sudarsono"></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="services footer-item">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="community footer-item">
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="subscribe-newsletters footer-item">
-                            <h4>Miscellaneous</h4>
-                            <ul>
-                                <li><a href="https://www.ithb.ac.id/study-program/Teknik/Informatika-2">Informatics
-                                        ITHB</a></li>
-                                <li><a href="https://linktr.ee/SansCo">Sans.Co</a></li>
-                                <li><a href="https://www.instagram.com/ayamgeprekbebass/">Ayam Geprek Bebas</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="copyright">
-                            <p>Copyright &copy; 2021 the Deboras x Squidward
-                                <br>
-                                Designed by <a rel="nofollow" href="https://templatemo.com"
-                                    title="free CSS templates">TemplateMo</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 display-block">
+          <div class="about footer-item">
+            <div class="new-container">
+              <p>Deboras Team - <a href="#mail"">deboras@mail.com</a></p>
+              <div class="media fel"><a href="https://www.instagram.com/feli.g_25/" target="_blank" title="Feliciana Gunadi"></a></div>
+              <div class="media sil"><a href="https://www.instagram.com/silviprisillia4/" target="_blank" title="Silvi Prisillia Louismono"></a></div>
+              <div class="media yen"><a href="https://www.instagram.com/yen_aj29/" target="_blank" title="Yendistia Angelia Julianti"></a></div>
+              <div class="media jes"><a href="https://www.instagram.com/jesslynowen/" target="_blank" title="Jesslyn Nadya Owen"></a></div>
+              <div class="media may"><a href="https://www.instagram.com/mariamaycelline/" target="_blank" title="Maycelline Selvyanti Sudarsono"></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="subscribe-newsletters footer-item">
+            <ul class="misc-class">
+              <h4>Miscellaneous Things Related to the Deboras</h4>
+              <li class="misc"><a href="https://www.ithb.ac.id/study-program/Teknik/Informatika-2">Informatics ITHB</a></li>
+              <li class="misc"><a href="https://linktr.ee/SansCo">Sans.Co</a></li>
+              <li class="misc"><a href="https://www.instagram.com/ayamgeprekbebass/">Ayam Geprek Bebas</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="copyright">
+            <p>Copyright &copy; 2021 the Deboras x Squidward
+            <br>
+            Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">TemplateMo</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 <style>
     .form {

@@ -18,7 +18,7 @@
               <li class="scroll-to-section"><a href="index.php#contact">Reservation</a></li> 
               <?php
                 if(!$_SESSION){
-                    echo '<li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">LOGIN</a></div></li>';
+                    echo '<li class="scroll-to-section"><div class="main-red-button-hover"><a href="index.php#contact">LOGIN</a></div></li>';
                 } else {
                     echo '<li class="scroll-to-section"><div class="main-red-button-hover"><a href="logout.php">LOGOUT</a></div></li>';
                 }
