@@ -17,7 +17,7 @@
               <li class="scroll-to-section"><a href="index.php#pricing">Pricing</a></li>
               <?php
                 if(!$_SESSION){
-                    echo '<li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">LOGIN</a></div></li>';
+                    echo '<li class="scroll-to-section"><div class="main-red-button-hover"><a href="index.php#contact">LOGIN</a></div></li>';
                 } else {
                     echo '<li><a href="orderRoom.php">Order a room</a></li>
                     <li class="scroll-to-section"><a href="orderTable.php">Order a table</a></li>

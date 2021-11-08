@@ -55,17 +55,17 @@
                             <div id="contact" class="section">
                                 <div class="container">
                                     <div class="row" style="font-size: 15px;">
-                                        <form id="update" action="" method="get">
+                                        <form id="update" action="submitOrderTable.php" method="post">
                                             <script>
                                                 function showTableList() {
                                                     var str = document.getElementById("roomName").value;
-                                                    var text = "<br><label style='margin-right: 30px;'>Table Capacity : </label>";
-                                                    if (str == "coworking") {
-                                                        text += "<select name='tableSelected' id='tableSelected' required=''>";
-                                                        text += "<option value='' disabled>Choose Table</option>";
-                                                        text += "<option value='c4'>4</option><option value='c6'>6</option><option value='c10'>10</option></select>";
-                                                    } else if (str == "indoor" || str == "outdoor") {
-                                                        text += '<select name="tableSelected" id="tableSelected" required=""><option value="" disabled>Choose Table</option><option value="c4">4</option><option value="c6">6</option><option value="c8">8</option></select>';
+                                                    var text = "<br><label style='margin-right: 30px;'>Capacity :</label><br>";
+                                                    if (str == "Co-Working") {
+                                                        text += "<select name='capacitySelected' id='capacitySelected' required=''>";
+                                                        text += "<option value='' disabled selected>Choose Capacity</option>";
+                                                        text += "<option value='4'>4</option><option value='6'>6</option><option value='10'>10</option></select>";
+                                                    } else if (str == "Indoor Cafe" || str == "Outdoor Cafe") {
+                                                        text += '<select name="capacitySelected" id="capacitySelected" required=""><option value="" disabled selected>Choose Capacity</option><option value="4">4</option><option value="6">6</option><option value="8">8</option></select>';
                                                     }
                                                     document.getElementById('tableChoose').innerHTML = text;
                                                 }
@@ -76,33 +76,41 @@
                                                     onchange="showTableList()" required="">
                                                     <option disabled selected>Choose Room
                                                     </option>
-                                                    <option value="coworking">Co-Working Space
+                                                    <option value="Co-Working">Co-Working Space
                                                     </option>
-                                                    <option value="indoor">Indoor Cafe
+                                                    <option value="Indoor Cafe">Indoor Cafe
                                                     </option>
-                                                    <option value="outdoor">Outdoor Cafe
+                                                    <option value="Outdoor Cafe">Outdoor Cafe
                                                     </option>
                                                 </select>
                                             </fieldset>
 
                                             <fieldset>
                                                 <div id="tableChoose">
-                                                    <br><label style="margin-right: 25px;">Table Capacity : </label>
-                                                    <select name="tableSelected" id="tableSelected" required="">
-                                                        <option disable>No Room Choosed</option>
+                                                    <br><label style="margin-right: 25px;">Capacity : </label><br>
+                                                    <select name="capacitySelected" id="capacitySelected" required="">
+                                                        <option disable selected>Choose Capacity</option>
                                                     </select>
                                                 </div>
                                             </fieldset>
                                             <fieldset>
-                                                <br><label style="margin-right: 73px;">Payment : </label>
+                                                <br><label style="margin-right: 23px;">Booked Date : </label>
+                                                <input type="date" name="bookedDate" id="bookedDate" required="">
+                                            </fieldset>
+                                            <fieldset>
+                                                <label style="margin-right: 23px;">Booked Time : </label>
+                                                <input type="time" name="bookedTime" id="bookedTime" value="11:00" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label style="margin-right: 73px;">Payment : </label>
                                                 <select name="paymentMethod" id="paymentMethod" required="">
                                                     <option disabled selected>Choose Payment Method
                                                     </option>
-                                                    <option value="transferBCA">Transfer BCA
+                                                    <option value="Transfer - BCA">Transfer - BCA
                                                     </option>
-                                                    <option value="ovo">OVO
+                                                    <option value="OVO">OVO
                                                     </option>
-                                                    <option value="gopay">GoPay
+                                                    <option value="GoPay">GoPay
                                                     </option>
                                                 </select>
                                             </fieldset>
@@ -126,58 +134,41 @@
             </div>
 
         </div>
-        <footer style="margin-top: 100px;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 display-block">
-                        <div class="about footer-item">
-                            <div class="new-container">
-                                <p>Deboras Team - <a href="#mail"">deboras@mail.com</a></p>
-                                <div class=" media fel"><a href="https://www.instagram.com/feli.g_25/" target="_blank"
-                                            title="Feliciana Gunadi"></a>
-                            </div>
-                            <div class="media sil"><a href="https://www.instagram.com/silviprisillia4/" target="_blank"
-                                    title="Silvi Prisillia Louismono"></a></div>
-                            <div class="media yen"><a href="https://www.instagram.com/yen_aj29/" target="_blank"
-                                    title="Yendistia Angelia Julianti"></a></div>
-                            <div class="media jes"><a href="https://www.instagram.com/jesslynowen/" target="_blank"
-                                    title="Jesslyn Nadya Owen"></a></div>
-                            <div class="media may"><a href="https://www.instagram.com/mariamaycelline/" target="_blank"
-                                    title="Maycelline Selvyanti Sudarsono"></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="services footer-item">
-
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="community footer-item">
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="subscribe-newsletters footer-item">
-                        <h4>Miscellaneous</h4>
-                        <ul>
-                            <li><a href="https://www.ithb.ac.id/study-program/Teknik/Informatika-2">Informatics
-                                    ITHB</a></li>
-                            <li><a href="https://linktr.ee/SansCo">Sans.Co</a></li>
-                            <li><a href="https://www.instagram.com/ayamgeprekbebass/">Ayam Geprek Bebas</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="copyright">
-                        <p>Copyright &copy; 2021 the Deboras x Squidward
-                            <br>
-                            Designed by <a rel="nofollow" href="https://templatemo.com"
-                                title="free CSS templates">TemplateMo</a>
-                        </p>
-                    </div>
-                </div>
+        <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 display-block">
+          <div class="about footer-item">
+            <div class="new-container">
+              <p>Deboras Team - <a href="#mail"">deboras@mail.com</a></p>
+              <div class="media fel"><a href="https://www.instagram.com/feli.g_25/" target="_blank" title="Feliciana Gunadi"></a></div>
+              <div class="media sil"><a href="https://www.instagram.com/silviprisillia4/" target="_blank" title="Silvi Prisillia Louismono"></a></div>
+              <div class="media yen"><a href="https://www.instagram.com/yen_aj29/" target="_blank" title="Yendistia Angelia Julianti"></a></div>
+              <div class="media jes"><a href="https://www.instagram.com/jesslynowen/" target="_blank" title="Jesslyn Nadya Owen"></a></div>
+              <div class="media may"><a href="https://www.instagram.com/mariamaycelline/" target="_blank" title="Maycelline Selvyanti Sudarsono"></a></div>
             </div>
-        </footer>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="subscribe-newsletters footer-item">
+            <ul class="misc-class">
+              <h4>Miscellaneous Things Related to the Deboras</h4>
+              <li class="misc"><a href="https://www.ithb.ac.id/study-program/Teknik/Informatika-2">Informatics ITHB</a></li>
+              <li class="misc"><a href="https://linktr.ee/SansCo">Sans.Co</a></li>
+              <li class="misc"><a href="https://www.instagram.com/ayamgeprekbebass/">Ayam Geprek Bebas</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="copyright">
+            <p>Copyright &copy; 2021 the Deboras x Squidward
+            <br>
+            Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">TemplateMo</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 <style>
     .container h2 {
