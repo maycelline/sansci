@@ -39,7 +39,7 @@
   </div> -->
   <!-- ***** Preloader End ***** -->
 
-  <?php include('header.php')?>
+  <?php include('headerAdmin.php')?>
 
   <div id="pricing" class="pricing-tables">
     <div class="tables-left-dec">
@@ -49,88 +49,34 @@
       <img src="assets/images/tables-right-dec.png" alt="">
     </div>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="item first-item">
-            <h4>Small</h4>
+      <div class="row" style="margin-top:30px;">
+        <div class="col-lg-4 buttonAdmin"><a>
+          <div class="item first-item" style="margin-top:0px; border:solid">
+          <br>
+          <img src="assets/images/profile.png" style="width:250px; margin-bottom:50px" alt="">
             <br>
+            <h4>Accept Member</h4>
             <br>
-            <!-- <em>50k/hour</em> -->
-            <span>500k/hour</span>
-            <ul>
-              <li>Up to 10 people</li>
-              <li>2 Charger Terminals</li>
-              <li>&nbsp;</li>
-              <li>&nbsp;</li>
-            </ul>
-            <ul class="desc">
-              <li style="font-size: 10px;">Including U-Shape Table<br>&nbsp;</li>
-            </ul>
-            <div class="main-blue-button-hover">
-              <?php
-                if(!$_SESSION) {
-                  echo'<a href="#contact">Book</a>';
-                } else {
-                  echo '<a href="orderRoom.php?selected=small">Book</a>';
-                }
-              ?>
-            </div>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item second-item">
-            <h4>Medium</h4>
+        </a></div>
+        <div class="col-lg-4 buttonAdmin"><a>
+          <div class="item second-item" style="margin-top:0px; border:solid">
+          <br>
+          <img src="assets/images/approved.png" style="width:250px; margin-bottom:50px" alt="">
+          <br>
+            <h4>Accept Reserve</h4>
             <br>
-            <br>
-            <!-- <em>$240/mo</em> -->
-            <span>1000k/hour</span>
-            <ul>
-              <li>Up to 20 People</li>
-              <li>Free Own Wifi</li>
-              <li>4 Charger Terminals</li>
-              <li>&nbsp;</li>
-            </ul>
-            <ul class="desc">
-              <li style="font-size: 10px;">Including Round Table/U-Shape Table<br>&nbsp;</li>
-            </ul>
-            <div class="main-blue-button-hover">
-              <?php
-                if(!$_SESSION) {
-                  echo'<a href="#contact">Book</a>';
-                } else {
-                  echo '<a href="orderRoom.php?selected=medium">Book</a>';
-                }
-              ?>
-            </div>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item third-item">
-            <h4>Large</h4>
+        </a></div>
+        <div class="col-lg-4 buttonAdmin"><a>
+          <div class="item third-item" style="margin-top:0px; border:solid">
+          <br>
+          <img src="assets/images/refresh.png" style="width:250px; margin-bottom:50px" alt="">
+          <br>
+            <h4>Update Room</h4>
             <br>
-            <br>
-            <!-- <em>$360/mo</em> -->
-            <span>1200-1500k/hour</span>
-            <ul>
-              <li>Up to 40 people</li>
-              <li>Double AC</li>
-              <li>Free Own Wifi</li>
-              <li>10 Charger Terminals</li>
-            </ul>
-            <ul class="desc">
-              <li style="font-size: 10px;">Including Boardroom Table/Theatre<br>Table/Round Table/U-Shape Table</li>
-            </ul>
-            <div class="main-blue-button-hover">
-              <?php
-                if(!$_SESSION) {
-                  echo'<a href="#contact">Book</a>';
-                } else {
-                  echo '<a href="orderRoom.php?selected=large">Book</a>';
-                }
-              ?>
-            </div>
           </div>
-        </div>
+        </a></div>
       </div>
     </div>
   </div>
@@ -174,7 +120,20 @@
       </div>
     </div>
   </footer>
-
+  <style>
+    .buttonAdmin a {
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 400;
+        text-transform: capitalize;
+        border-radius: 23px;
+        transition: all .3s;
+    }
+    .buttonAdmin a:hover {
+        background-color: black;
+        color: #fff;
+    }
+  </style>
 
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>
