@@ -106,20 +106,21 @@
                                                         var str = document.getElementById("roomName").value;
                                                         var text = "";
                                                         if (str == "small") {
-                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -150px; margin-right: -165px; height: 15px'> 2 Charger Terminals<br>";
+                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> 2 Charger Terminals<br>";
                                                         } else if (str == "medium") {
-                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -150px; margin-right: -165px; height: 15px'> 4 Charger Terminal<br>";
-                                                            text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -150px; margin-right: -165px; height: 15px'> Free Own Wifi<br>";
+                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> 4 Charger Terminal<br>";
+                                                            text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> Own Wifi<br>";
                                                         } else {
-                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -150px; margin-right: -165px; height: 15px'> 10 Charger Terminal<br>";
-                                                            text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -150px; margin-right: -165px; height: 15px'> Free Own Wifi<br>";
-                                                            text += "<input type='checkbox' id = 'AC' name = 'AC' value='AC' disabled checked style='margin-left: -150px; margin-right: -165px; height: 15px'> Double AC<br>";
+                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> 10 Charger Terminal<br>";
+                                                            text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> Own Wifi<br>";
+                                                            text += "<input type='checkbox' id = 'AC' name = 'AC' value='AC' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> Double AC<br>";
                                                         }
                                                         document.getElementById('attributeChoose').innerHTML = text;
                                                     }
                                                 </script>
                                                 <fieldset>
-                                                    <br>Tipe Ruangan : <select name="roomName" id="roomName"
+                                                    <br><label style="margin-right: 25px;">Tipe Ruangan : </label>
+                                                    <select name="roomName" id="roomName"
                                                         onchange="showTableList(); showAttributeList()" required="">
                                                         <option disabled selected>Choose Room Size
                                                         </option>
@@ -134,32 +135,52 @@
 
                                                 <fieldset>
                                                     <div id="tableChoose">
-                                                        <br>Jenis Meja :
+                                                        <br><label style="margin-right: 50px;">Jenis Meja : </label>
                                                         <select name="tableSelected" id="tableSelected" required="">
                                                             <option disable selected>No Room Choosed</option>
                                                         </select>
                                                     </div>
                                                 </fieldset>
                                                 <fieldset>
-                                                    <br>Tambahan : <div id="attributeChoose" style="margin-top: 15px;"></div>
+                                                    <br>Tambahan : <div id="attributeChoose" style="margin-top: 15px;">
+                                                    </div>
                                                     <input type="checkbox" name="micSpeaker" id="micSpeaker"
-                                                            value="micSpeaker" style="margin-left: -150px; margin-right: -165px; height: 15px"> Microphone and Speaker<br>
+                                                        value="micSpeaker"
+                                                        style="margin-left: -60px; margin-right: -55px; height: 15px">
+                                                    Microphone and Speaker<br>
                                                     <input type="checkbox" name="cableConn" id="cableConn"
-                                                        value="cableConn" style="margin-left: -150px; margin-right: -165px; height: 15px"> Cable Connector<br>
+                                                        value="cableConn"
+                                                        style="margin-left: -60px; margin-right: -55px; height: 15px">
+                                                    Cable Connector<br>
                                                     <input type="checkbox" name="LCDProjector" id="LCDProjector"
-                                                        value="LCDProjector" style="margin-left: -150px; margin-right: -165px; height: 15px"> LCD Projector Screen<br>
+                                                        value="LCDProjector"
+                                                        style="margin-left: -60px; margin-right: -55px; height: 15px">
+                                                    LCD Projector Screen<br>
                                                     <input type="checkbox" name="FlipChartMarkers" id="FlipChartMarkers"
-                                                        value="FlipChartMarkers" style="margin-left: -150px; margin-right: -165px; height: 15px"> Flipchart and Markers<br>
+                                                        value="FlipChartMarkers"
+                                                        style="margin-left: -60px; margin-right: -55px; height: 15px">
+                                                    Flipchart and Markers<br>
                                                     <input type="checkbox" name="CoffeeMaker" id="CoffeeMaker"
-                                                        value="CoffeeMaker" style="margin-left: -150px; margin-right: -165px; height: 15px"> Coffee Maker
+                                                        value="CoffeeMaker"
+                                                        style="margin-left: -60px; margin-right: -55px; height: 15px">
+                                                    Coffee Maker
                                                 </fieldset>
                                                 <fieldset>
-                                                    <br>Tanggal Booking : <input type="date" name="bookedDate"
+                                                    Tanggal Booking : <input type="date" name="bookedDate"
                                                         id="bookedDate" placeholder="Tanggal Booking" required="">
                                                 </fieldset>
                                                 <fieldset>
-                                                    <br>Metode Pembayaran : <input type="text" name="paymentMethod"
-                                                        id="paymentMethod" placeholder="Metode Pembayaran" required="">
+                                                    <label style="margin-right: 25px;">Pembayaran : </label>
+                                                    <select name="paymentMethod" id="paymentMethod" required="">
+                                                        <option disabled selected>Choose Payment Method
+                                                        </option>
+                                                        <option value="transferBCA">Transfer BCA
+                                                        </option>
+                                                        <option value="ovo">OVO
+                                                        </option>
+                                                        <option value="gopay">GoPay
+                                                        </option>
+                                                    </select>
                                                 </fieldset>
                                                 <fieldset>
                                                     <br><button type="submit" id="form-submit"
@@ -175,6 +196,57 @@
                     </div>
                 </div>
             </div>
+            <footer style="margin-top: 100px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 display-block">
+                            <div class="about footer-item">
+                                <div class="new-container">
+                                    <p>Deboras Team - <a href="#mail"">deboras@mail.com</a></p>
+                                <div class=" media fel"><a href="https://www.instagram.com/feli.g_25/" target="_blank"
+                                                title="Feliciana Gunadi"></a></div>
+                                <div class="media sil"><a href="https://www.instagram.com/silviprisillia4/"
+                                        target="_blank" title="Silvi Prisillia Louismono"></a></div>
+                                <div class="media yen"><a href="https://www.instagram.com/yen_aj29/" target="_blank"
+                                        title="Yendistia Angelia Julianti"></a></div>
+                                <div class="media jes"><a href="https://www.instagram.com/jesslynowen/" target="_blank"
+                                        title="Jesslyn Nadya Owen"></a></div>
+                                <div class="media may"><a href="https://www.instagram.com/mariamaycelline/"
+                                        target="_blank" title="Maycelline Selvyanti Sudarsono"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="services footer-item">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="community footer-item">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="subscribe-newsletters footer-item">
+                            <h4>Miscellaneous</h4>
+                            <ul>
+                                <li><a href="https://www.ithb.ac.id/study-program/Teknik/Informatika-2">Informatics
+                                        ITHB</a></li>
+                                <li><a href="https://linktr.ee/SansCo">Sans.Co</a></li>
+                                <li><a href="https://www.instagram.com/ayamgeprekbebass/">Ayam Geprek Bebas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="copyright">
+                            <p>Copyright &copy; 2021 the Deboras x Squidward
+                                <br>
+                                Designed by <a rel="nofollow" href="https://templatemo.com"
+                                    title="free CSS templates">TemplateMo</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 </body>
 <style>
     .container h2 {
@@ -197,19 +269,15 @@
     }
 
     form#update {
-        margin-left: -150px;
+        margin-left: -100px;
         position: relative;
         z-index: 2;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
         padding: 60px 120px;
         border-radius: 20px;
     }
 
     form#update input {
-        width: 100%;
+        width: 50%;
         height: 46px;
         border-radius: 0px;
         background-color: transparent;
@@ -223,10 +291,6 @@
         color: #2a2a2a;
         padding: 0px 0px;
         margin-bottom: 25px;
-    }
-
-    .leftAlignment {
-        float: left;
     }
 
     form#update input::placeholder {
