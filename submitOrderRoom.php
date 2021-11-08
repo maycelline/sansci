@@ -11,8 +11,10 @@
 
     include('connect.php');
 
-    $timestamp = date('Y-m-d H:i:s');
+    date_default_timezone_set('Asia/Jakarta');
+    $timestamp = date('Y-m-d H:i:s', time());
     $bookedDate = $bookedDate." ".$bookedTime;
+    
     $sql = "SELECT * FROM rooms WHERE roomType = '$roomName' AND roomCapacity = '$capacitySelected' AND status = 0";
     $result = mysqli_query($con, $sql);
 
@@ -79,6 +81,6 @@
 
     echo "<script type='text/javascript'>";
     echo "confirm('Transaction successfully made!');";
-    // echo "window.location.href = 'index.php';";
+    echo "window.location.href = 'index.php';";
     echo "</script>";
 ?>

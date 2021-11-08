@@ -72,7 +72,7 @@
                                                         var text = "";
                                                         if (str == "small") {
                                                             text += "<select name='tableSelected' id='tableSelected' required=''>";
-                                                            text += "<option value='' disabled>Choose Room</option>";
+                                                            text += "<option value='' disabled selected>Choose Table</option>";
                                                             text += "<option value='U-Shape Table' selected>U-Shape Table</option></select>";
                                                         } else if (str == "medium") {
                                                             text += '<select name="tableSelected" id="tableSelected" required=""><option value=""disabled>Choose Room</option><option value="U-Shape Table" selected>U-Shape Table</option><option value="Round Table">Round Table</option></select>';
@@ -80,7 +80,7 @@
                                                             text += '<select name="tableSelected" id="tableSelected" required=""><option value=""disabled>Choose Room</option><option value="U-Shape Table" selected>U-Shape Table</option><option value="Round Table">Round Table</option><option value="Theatre Table">Theatre Table</option><option value="Boardroom Table">Boardroom Table</option></select>';
                                                         } else {
                                                             text += "<select name='tableSelected' id='tableSelected' required=''>";
-                                                            text += "<option value='' disabled>Choose Room</option></select>";
+                                                            text += "<option value='' disabled selected>Choose Table</option></select>";
                                                         }
                                                         document.getElementById('tableChoose').innerHTML = text;
                                                     }
@@ -115,20 +115,20 @@
                                                         var text = "";
                                                         if (str == "small") {
                                                             text += "<select name='capacitySelected' id='capacitySmall' required=''>";
-                                                            text += "<option value='' disabled>Choose Capacity</option>";
+                                                            text += "<option value='' disabled selected>Choose Capacity</option>";
                                                             text += "<option value='10' selected>10</option></select>";
                                                         } else if (str == "medium") {
                                                             text += '<select name="capacitySelected" id="capacityMedium" required="">';
-                                                            text += '<option value=""disabled>Choose Capacity</option>';
+                                                            text += '<option value=""disabled selected>Choose Capacity</option>';
                                                             text += '<option value="20" selected>20</option>';
                                                         } else if (str == "large") {
                                                             text += '<select name="capacitySelected" id="capacityLarge" required="">';
-                                                            text += '<option value=""disabled>Choose Capacity</option>';
+                                                            text += '<option value=""disabled selected>Choose Capacity</option>';
                                                             text += '<option value="30" selected>30</option>';
                                                             text += '<option value="40">40</option>';
                                                         } else {
                                                             text += "<select name='capacitySelected' required=''>";
-                                                            text += "<option value='' disabled>Choose Capacity</option></select>";
+                                                            text += "<option value='' disabled selected>Choose Capacity</option></select>";
                                                         }
                                                         document.getElementById('capacityChoose').innerHTML = text;
                                                     }
@@ -159,7 +159,7 @@
                                                     <br><label style="margin-right: 28px;">Table Type&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;</label>
                                                     <div id="tableChoose" style="display: inline;">
                                                         <select name="tableSelected" id="tableSelected" required="">
-                                                            <option disable selected>No Room Choosed</option>
+                                                            <option value="" disable selected>No Room Choosed</option>
                                                         </select>
                                                     </div>
                                                 </fieldset>
@@ -168,7 +168,7 @@
                                                     <br><label style="margin-right: 28px;">Capacity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;</label>
                                                     <div id="capacityChoose" style="display: inline;">
                                                         <select name="capacitySelected" id="capacitySelected" required="">
-                                                            <option disable selected>No Capacity Choosed</option>
+                                                            <option value="" disable selected>No Capacity Choosed</option>
                                                         </select>
                                                     </div>
                                                 </fieldset>
@@ -198,15 +198,15 @@
                                                     Coffee Maker
                                                 </fieldset>
                                                 <fieldset>
-                                                    <label style="margin-right: 23px;">Booked Date : </label>
+                                                    <label style="margin-right: 23px;">Booked Date&nbsp;: </label>
                                                     <input type="date" name="bookedDate" id="bookedDate" required="">
                                                 </fieldset>
                                                 <fieldset>
-                                                    <label style="margin-right: 23px;">Booked Time : </label>
+                                                    <label style="margin-right: 23px;">Booked Time&nbsp;: </label>
                                                     <input type="time" name="bookedTime" id="bookedTime" value="11:00" required>
                                                 </fieldset>
                                                 <fieldset>
-                                                    <label style="margin-right: 45px;">Payment : </label>
+                                                    <label style="margin-right: 45px;">Payment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
                                                     <select name="paymentMethod" id="paymentMethod" required="">
                                                         <option disabled selected>Choose Payment Method
                                                         </option>
