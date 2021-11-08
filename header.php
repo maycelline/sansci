@@ -11,11 +11,11 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#about">About</a></li>
-              <li class="scroll-to-section"><a href="#portfolio">See Facilities</a></li>
-              <li class="scroll-to-section"><a href="#pricing">Pricing</a></li> 
-              <li class="scroll-to-section"><a href="#contact">Reservation</a></li> 
+              <li class="scroll-to-section"><a href="index.php#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="index.php#about">About</a></li>
+              <li class="scroll-to-section"><a href="index.php#portfolio">See Facilities</a></li>
+              <li class="scroll-to-section"><a href="index.php#pricing">Pricing</a></li> 
+              <li class="scroll-to-section"><a href="index.php#contact">Reservation</a></li> 
               <?php
                 if(!$_SESSION){
                     echo '<li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">LOGIN</a></div></li>';

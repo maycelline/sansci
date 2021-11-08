@@ -320,7 +320,7 @@
               <li style="font-size: 10px;">Including U-Shape Table<br>&nbsp;</li>
             </ul>
             <div class="main-blue-button-hover">
-              <a href="book.php?small">Book</a>
+              <a href="order.php?selected=small">Book</a>
             </div>
           </div>
         </div>
@@ -341,7 +341,7 @@
               <li style="font-size: 10px;">Including Round Table/U-Shape Table<br>&nbsp;</li>
             </ul>
             <div class="main-blue-button-hover">
-              <a href="book.php?medium">Book</a>
+              <a href="order.php?selected=medium">Book</a>
             </div>
           </div>
         </div>
@@ -362,7 +362,7 @@
               <li style="font-size: 10px;">Including Boardroom Table/Theatre<br>Table/Round Table/U-Shape Table</li>
             </ul>
             <div class="main-blue-button-hover">
-              <a href="book.php?large">Book</a>
+              <a href="order.php?selected=large">Book</a>
             </div>
           </div>
         </div>

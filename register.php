@@ -13,15 +13,24 @@
     $found = false;
 
     if($password != $retype){
-        alert("Password yang anda input salah!");
-        header("Location: index.php");
+        echo "<script type='text/javascript'>";
+        echo "if(confirm('Wrong password!')){
+            location.href = 'index.php';
+        } else {
+            location.href = 'index.php';
+        }";
+        echo "</script>";
     }
 
     while($row = mysqli_fetch_array($result)){
         if($row[3] == $email){
-            alert("Email ini sudah memiliki akun");
-            header("Location: index.php");
-            $found = true;
+            echo "<script type='text/javascript'>";
+            echo "if(confirm('This email already has an account!')){
+                location.href = 'index.php';
+            } else {
+                location.href = 'index.php';
+            }";
+            echo "</script>";
         }
     }
 
@@ -35,10 +44,21 @@
             $_SESSION['password'] = $password;
             $_SESSION['phoneNumber'] = $phoneNumber;
             $_SESSION['type'] = 'MEMBER';
-            alert("Register berhasil!");
+            echo "<script type='text/javascript'>";
+            echo "if(confirm('Registration completed!')){
+                location.href = 'index.php';
+            } else {
+                location.href = 'index.php';
+            }";
+            echo "</script>";
         } else {
-            echo "Gagal";
-            // alert("Register gagal!");
+            echo "<script type='text/javascript'>";
+            echo "if(confirm('Registration failed!')){
+                location.href = 'index.php';
+            } else {
+                location.href = 'index.php';
+            }";
+            echo "</script>";
         }
     }
 ?>
