@@ -90,7 +90,7 @@
                                                 <script>
                                                     function showTableList() {
                                                         var str = document.getElementById("roomName").value;
-                                                        var text = "<br>Jenis Meja : ";
+                                                        var text = "<br><label style='margin-right: 55px;'>Jenis Meja : </label>";
                                                         if (str == "small") {
                                                             text += "<select name='tableSelected' id='tableSelected' required=''>";
                                                             text += "<option value='' disabled>Choose Room</option>";
@@ -106,20 +106,20 @@
                                                         var str = document.getElementById("roomName").value;
                                                         var text = "";
                                                         if (str == "small") {
-                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> 2 Charger Terminals<br>";
+                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 2 Charger Terminals<br>";
                                                         } else if (str == "medium") {
-                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> 4 Charger Terminal<br>";
-                                                            text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> Own Wifi<br>";
+                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 4 Charger Terminal<br>";
+                                                            text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Own Wifi<br>";
                                                         } else {
-                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> 10 Charger Terminal<br>";
-                                                            text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> Own Wifi<br>";
-                                                            text += "<input type='checkbox' id = 'AC' name = 'AC' value='AC' disabled checked style='margin-left: -60px; margin-right: -55px; height: 15px'> Double AC<br>";
+                                                            text += "<input type='checkbox' id = 'terminal' name = 'terminal' value='terminal' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> 10 Charger Terminal<br>";
+                                                            text += "<input type='checkbox' id = 'wifi' name = 'wifi' value='wifi' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Own Wifi<br>";
+                                                            text += "<input type='checkbox' id = 'AC' name = 'AC' value='AC' disabled checked style='margin-left: -50px; margin-right: -55px; height: 15px'> Double AC<br>";
                                                         }
                                                         document.getElementById('attributeChoose').innerHTML = text;
                                                     }
                                                 </script>
                                                 <fieldset>
-                                                    <br><label style="margin-right: 25px;">Tipe Ruangan : </label>
+                                                    <br><label style="margin-right: 24px;">Tipe Ruangan : </label>
                                                     <select name="roomName" id="roomName"
                                                         onchange="showTableList(); showAttributeList()" required="">
                                                         <option disabled selected>Choose Room Size
@@ -141,28 +141,29 @@
                                                         </select>
                                                     </div>
                                                 </fieldset>
+                                                
                                                 <fieldset>
                                                     <br>Tambahan : <div id="attributeChoose" style="margin-top: 15px;">
                                                     </div>
                                                     <input type="checkbox" name="micSpeaker" id="micSpeaker"
                                                         value="micSpeaker"
-                                                        style="margin-left: -60px; margin-right: -55px; height: 15px">
+                                                        style="margin-left: -50px; margin-right: -55px; height: 15px">
                                                     Microphone and Speaker<br>
                                                     <input type="checkbox" name="cableConn" id="cableConn"
                                                         value="cableConn"
-                                                        style="margin-left: -60px; margin-right: -55px; height: 15px">
+                                                        style="margin-left: -50px; margin-right: -55px; height: 15px">
                                                     Cable Connector<br>
                                                     <input type="checkbox" name="LCDProjector" id="LCDProjector"
                                                         value="LCDProjector"
-                                                        style="margin-left: -60px; margin-right: -55px; height: 15px">
+                                                        style="margin-left: -50px; margin-right: -55px; height: 15px">
                                                     LCD Projector Screen<br>
                                                     <input type="checkbox" name="FlipChartMarkers" id="FlipChartMarkers"
                                                         value="FlipChartMarkers"
-                                                        style="margin-left: -60px; margin-right: -55px; height: 15px">
+                                                        style="margin-left: -50px; margin-right: -55px; height: 15px">
                                                     Flipchart and Markers<br>
                                                     <input type="checkbox" name="CoffeeMaker" id="CoffeeMaker"
                                                         value="CoffeeMaker"
-                                                        style="margin-left: -60px; margin-right: -55px; height: 15px">
+                                                        style="margin-left: -50px; margin-right: -55px; height: 15px">
                                                     Coffee Maker
                                                 </fieldset>
                                                 <fieldset>
