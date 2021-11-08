@@ -61,7 +61,7 @@
                                 <div id="contact" class="section">
                                     <div class="container">
                                         <div class="row" style="font-size: 15px; width: 125%;">
-                                            <form id="update" action="submitOrder.php" method="post">
+                                            <form id="update" action="submitOrderRoom.php" method="post">
                                                 <script>
                                                     function showTableList(value) {
                                                         if(value != undefined){
