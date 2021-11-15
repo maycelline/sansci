@@ -115,20 +115,20 @@
                                                         var text = "";
                                                         if (str == "small") {
                                                             text += "<select name='capacitySelected' id='capacitySmall' required=''>";
-                                                            text += "<option value='' disabled selected>Choose Capacity</option>";
+                                                            text += "<option value='' disabled>Choose Capacity</option>";
                                                             text += "<option value='10' selected>10</option></select>";
                                                         } else if (str == "medium") {
                                                             text += '<select name="capacitySelected" id="capacityMedium" required="">';
-                                                            text += '<option value=""disabled selected>Choose Capacity</option>';
+                                                            text += '<option value=""disabled>Choose Capacity</option>';
                                                             text += '<option value="20" selected>20</option>';
                                                         } else if (str == "large") {
                                                             text += '<select name="capacitySelected" id="capacityLarge" required="">';
-                                                            text += '<option value=""disabled selected>Choose Capacity</option>';
+                                                            text += '<option value=""disabled>Choose Capacity</option>';
                                                             text += '<option value="30" selected>30</option>';
                                                             text += '<option value="40">40</option>';
                                                         } else {
                                                             text += "<select name='capacitySelected' required=''>";
-                                                            text += "<option value='' disabled selected>Choose Capacity</option></select>";
+                                                            text += "<option value='' disabled>Choose Capacity</option></select>";
                                                         }
                                                         document.getElementById('capacityChoose').innerHTML = text;
                                                     }
@@ -240,41 +240,9 @@
                     </div>
                 </div>
             </div>
-            <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 display-block">
-          <div class="about footer-item">
-            <div class="new-container">
-              <p>Deboras Team - <a href="#mail"">deboras@mail.com</a></p>
-              <div class="media fel"><a href="https://www.instagram.com/feli.g_25/" target="_blank" title="Feliciana Gunadi"></a></div>
-              <div class="media sil"><a href="https://www.instagram.com/silviprisillia4/" target="_blank" title="Silvi Prisillia Louismono"></a></div>
-              <div class="media yen"><a href="https://www.instagram.com/yen_aj29/" target="_blank" title="Yendistia Angelia Julianti"></a></div>
-              <div class="media jes"><a href="https://www.instagram.com/jesslynowen/" target="_blank" title="Jesslyn Nadya Owen"></a></div>
-              <div class="media may"><a href="https://www.instagram.com/mariamaycelline/" target="_blank" title="Maycelline Selvyanti Sudarsono"></a></div>
-            </div>
-          </div>
         </div>
-        <div class="col-lg-12">
-          <div class="subscribe-newsletters footer-item">
-            <ul class="misc-class">
-              <h4>Miscellaneous Things Related to the Deboras</h4>
-              <li class="misc"><a href="https://www.ithb.ac.id/study-program/Teknik/Informatika-2">Informatics ITHB</a></li>
-              <li class="misc"><a href="https://linktr.ee/SansCo">Sans.Co</a></li>
-              <li class="misc"><a href="https://www.instagram.com/ayamgeprekbebass/">Ayam Geprek Bebas</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <div class="copyright">
-            <p>Copyright &copy; 2021 the Deboras x Squidward
-            <br>
-            Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">TemplateMo</a></p>
-          </div>
-        </div>
-      </div>
     </div>
-  </footer>
+    <?php include('footer.php')?>
 </body>
 <style>
     .form {
