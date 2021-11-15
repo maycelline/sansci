@@ -61,7 +61,7 @@
                                 <div id="contact" class="section">
                                     <div class="container">
                                         <div class="row" style="font-size: 15px; width: 125%;">
-                                            <form id="update" action="submitOrderRoom.php" method="post">
+                                            <form id="update" action="submitOrderRoom.php" method="post" enctype="multipart/form-data">
                                                 <script>
                                                     function showTableList(value) {
                                                         if(value != undefined){
@@ -154,13 +154,13 @@
                                                         </option>
                                                     </select>
                                                 </fieldset>
-
                                                 <fieldset>
                                                     <br><label style="margin-right: 28px;">Table Type&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;</label>
                                                     <div id="tableChoose" style="display: inline;">
                                                         <select name="tableSelected" id="tableSelected" required="">
                                                             <option value="" disable selected>No Room Choosed</option>
                                                         </select>
+                                                        <p id="tableAfter" hidden></p>
                                                     </div>
                                                 </fieldset>
 
@@ -203,12 +203,12 @@
                                                 </fieldset>
                                                 <fieldset>
                                                     <label style="margin-right: 23px;">Booked Time&nbsp;: </label>
-                                                    <input type="time" name="bookedTime" id="bookedTime" value="11:00" required>
+                                                    <input type="time" name="bookedTime" id="bookedTime" required="">
                                                 </fieldset>
                                                 <fieldset>
                                                     <label style="margin-right: 45px;">Payment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
                                                     <select name="paymentMethod" id="paymentMethod" required="">
-                                                        <option disabled selected>Choose Payment Method
+                                                        <option disabled>Choose Payment Method
                                                         </option>
                                                         <option value="Transfer - BCA">Transfer - BCA
                                                         </option>
@@ -217,6 +217,7 @@
                                                         <option value="GoPay">GoPay
                                                         </option>
                                                     </select>
+                                                    <br><br><input type="file" name="file" required>
                                                 </fieldset>
                                                 <fieldset>
                                                     <br><button type="submit" id="form-submit"

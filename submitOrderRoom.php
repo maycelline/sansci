@@ -12,6 +12,7 @@
     $tableSelected = $_POST["tableSelected"];
     $capacitySelected = $_POST["capacitySelected"];
     $paymentMethod = $_POST["paymentMethod"];
+    $file = $_FILES["file"];
     $bookedDate = $_POST["bookedDate"];
     $bookedTime = $_POST["bookedTime"];
     $userId = $_SESSION["userId"];
@@ -31,15 +32,18 @@
         break;
     }
 
+    move_uploaded_file($file["tmp_name"], "assets/images/".$file["name"]);
+    $paymentFile = $file["name"];
+
     if($roomId!=""){
-        $sql2 = "INSERT INTO transactions(transactionDate, reservedDate, reservationType, paymentMethod, userId) VALUES ('$timestamp', '$bookedDate', 1, '$paymentMethod', '$userId')";
+        $sql2 = "INSERT INTO transactions(transactionDate, reservedDate, reservationType, paymentMethod, paymentFile, userId, status) VALUES ('$timestamp', '$bookedDate', 1, '$paymentMethod', '$paymentFile', '$userId', 0)";
         $result = mysqli_query($con, $sql2);
         $sql3 = "UPDATE rooms SET `status` = 1 WHERE roomId = '$roomId'";
         $result = mysqli_query($con, $sql3);
     } else {
         echo "<script type='text/javascript'>";
         echo "confirm('All rooms according to your request are fully booked! Please try another room type.');";
-        echo "window.location.href = 'orderRoom.php?selected=small';";
+        echo "window.location.href = 'orderRoom.php';";
         echo "</script>";
     }
 
@@ -86,8 +90,8 @@
         $result = mysqli_query($con, $sql6);
     }
 
-    echo "<script type='text/javascript'>";
-    echo "confirm('Transaction successfully made!');";
-    echo "window.location.href = 'index.php';";
-    echo "</script>";
+    // echo "<script type='text/javascript'>";
+    // echo "confirm('Transaction successfully made!');";
+    // echo "window.location.href = 'index.php';";
+    // echo "</script>";
 ?>
