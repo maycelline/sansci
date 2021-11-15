@@ -90,8 +90,8 @@
         $result = mysqli_query($con, $sql6);
     }
 
-    // echo "<script type='text/javascript'>";
-    // echo "confirm('Transaction successfully made!');";
-    // echo "window.location.href = 'index.php';";
-    // echo "</script>";
+    echo "<script type='text/javascript'>";
+    echo "confirm('Transaction successfully made!');";
+    echo "window.location.href = 'index.php';";
+    echo "</script>";
 ?>

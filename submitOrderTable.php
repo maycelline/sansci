@@ -11,6 +11,7 @@
     $roomName = $_POST["roomName"];
     $capacitySelected = $_POST["capacitySelected"];
     $paymentMethod = $_POST["paymentMethod"];
+    $file = $_FILES["file"];
     $bookedDate = $_POST["bookedDate"];
     $bookedTime = $_POST["bookedTime"];
     $userId = $_SESSION["userId"];
@@ -30,11 +31,14 @@
         break;
     }
 
+    move_uploaded_file($file["tmp_name"], "assets/images/".$file["name"]);
+    $paymentFile = $file["name"];
+
     if($tableId!=""){
         if($roomName == 'Co-Working'){
-            $sql2 = "INSERT INTO transactions(transactionDate, reservedDate, reservationType, paymentMethod, userId) VALUES ('$timestamp', '$bookedDate', 2, '$paymentMethod', '$userId')";
+            $sql2 = "INSERT INTO transactions(transactionDate, reservedDate, reservationType, paymentMethod, paymentFile, userId, status) VALUES ('$timestamp', '$bookedDate', 2, '$paymentMethod', '$paymentFile', '$userId', 0)";
         } else {
-            $sql2 = "INSERT INTO transactions(transactionDate, reservedDate, reservationType, paymentMethod, userId) VALUES ('$timestamp', '$bookedDate', 3, '$paymentMethod', '$userId')";
+            $sql2 = "INSERT INTO transactions(transactionDate, reservedDate, reservationType, paymentMethod, paymentFile, userId, status) VALUES ('$timestamp', '$bookedDate', 3, '$paymentMethod', '$paymentFile', '$userId', 0)";
         }
         $result = mysqli_query($con, $sql2);
         $sql3 = "UPDATE tables SET `status` = 1 WHERE tableId = '$tableId'";

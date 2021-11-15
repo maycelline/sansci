@@ -55,7 +55,7 @@
                             <div id="contact" class="section">
                                 <div class="container">
                                     <div class="row" style="font-size: 15px;">
-                                        <form id="update" action="submitOrderTable.php" method="post">
+                                        <form id="update" action="submitOrderTable.php" method="post" enctype="multipart/form-data">
                                             <script>
                                                 function showTableList() {
                                                     var str = document.getElementById("roomName").value;
@@ -113,6 +113,7 @@
                                                     <option value="GoPay">GoPay
                                                     </option>
                                                 </select>
+                                                <br><br><input type="file" name="file" required style="width: 100%;">
                                             </fieldset>
                                             <fieldset>
                                                 <br><button type="submit" id="form-submit" class="main-button"
