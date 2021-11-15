@@ -48,37 +48,32 @@
     <div class="tables-right-dec">
       <img src="assets/images/tables-right-dec.png" alt="">
     </div>
-    <div class="container">
-      <div class="row" style="margin-top:30px">
-        <div class="col-lg-6 buttonAdmin"><a href="showCheckOutReserved.php">
-          <div class="item second-item" style="margin: 10px; padding:30px; border: black solid">
-          <br>
-          <img src="assets/images/feature.png" style="width:50%; margin-bottom:30px" alt="">
-          <br>
-            <h5>Checkout Reserve</h5>
-            <br>
-          </div>
-        </a></div>
-        <!-- <div class="col-lg-4 buttonAdmin"><a href="#">
-          <div class="item third-item" style="margin: 10px; padding:30px; border: black solid">
-          <br>
-          <img src="assets/images/refresh.png" style="width:80%; margin-bottom:30px" alt="">
-          <br>
-            <h5>Update Room n Table</h5>
-            <br>
-          </div>
-        </a></div> -->
-        <div class="col-lg-6 buttonAdmin"><a href="#">
-          <div class="item first-item" style="margin: 10px; padding:30px; border: black solid">
-          <br>
-          <img src="assets/images/piggy-bank.png" style="width:50%; margin-bottom:30px" alt="">
-            <br>
-            <h5>See Income</h5>
-            <br>
-          </div>
-        </a></div>
-      </div>
-    </div>
+    <h5>Room Booked :</h5><br>
+    <?php
+        include('connect.php');
+        $sql = "SELECT a.transactionDate, a.reservedDate, d.firstName, d.lastName, c.roomType FROM transactions a JOIN roomTransactions b ON a.transactionId = b.transactionId JOIN rooms c ON b.roomId = c.roomId JOIN users d ON d.userId = a.userId WHERE c.status = '1' AND a.status = '0' ORDER BY a.reservedDate";
+        $result = mysqli_query($con,$sql);
+        echo "<form action='#' method='post' style='margin: 0 0 auto;width:93%'>";
+        echo "<br><table class='col-lg-12'>
+                  <tr><th>Order Date</th><th>Reserved Date</th><th>Name</th><th>Room Type</th><th>Check Out Reserved</th></tr>";
+        while ($row = mysqli_fetch_array($result)) {
+            echo "<tr><td>$row[0]</td><td>$row[1]</td><td>$row[2] $row[3]</td><td>$row[4]</td><td style='text-align: center; padding-left: 0px'><a href='#'>Check Out</a></td></tr>";
+        }
+        echo "</table></form>";
+    ?>
+    <h5>Table Booked :</h5><br>
+    <?php
+        include('connect.php');
+        $sql = "SELECT a.transactionDate, a.reservedDate, d.firstName, d.lastName, c.tableType FROM transactions a JOIN tableTransactions b ON a.transactionId = b.transactionId JOIN tables c ON b.tableId = c.tableId JOIN users d ON d.userId = a.userId WHERE c.status = '1' AND a.status = '0' ORDER BY a.reservedDate";
+        $result = mysqli_query($con,$sql);
+        echo "<form action='#' method='post' style='margin: 0 0 auto;width:93%'>";
+        echo "<br><table class='col-lg-12'>
+                  <tr><th>Order Date</th><th>Reserved Date</th><th>Name</th><th>Table Type</th><th>Check Out Reserved</th></tr>";
+        while ($row = mysqli_fetch_array($result)) {
+            echo "<tr><td>$row[0]</td><td>$row[1]</td><td>$row[2] $row[3]</td><td>$row[4]</td><td style='text-align: center; padding-left: 0px'><a href='#'>Check Out</a></td></tr>";
+        }
+        echo "</table></form>";
+    ?>
   </div>
 
   <div class="footer-dec">
@@ -100,6 +95,7 @@
             </div>
           </div>
         </div>
+        <br>
         <div class="col-lg-12">
           <div class="subscribe-newsletters footer-item">
             <ul class="misc-class">
@@ -111,7 +107,7 @@
           </div>
         </div>
         <div class="col-lg-12">
-          <div class="copyright">
+          <div class="copyright" style='margin:0 0 auto'>
             <p>Copyright &copy; 2021 the Deboras x Squidward
             <br>
             Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">TemplateMo</a></p>
@@ -121,21 +117,34 @@
     </div>
   </footer>
   <style>
-    .buttonAdmin a {
-        display: inline-block;
-        font-size: 15px;
-        font-weight: 400;
-        text-transform: capitalize;
-        border-radius: 23px;
-        transition: all .3s;
+    .positioningButton {
+        margin-left: 50px;
+        width:100%;
     }
-    .buttonAdmin a:hover {
-        background-color: black;
-        color: #fff;
-        border-radius: 20px;
+    table tr th, table tr td {
+        width:20%;
     }
-    .pricing-tables .item h5 {
-      margin-top:20px;
+    tr{
+        text-align: center;
+    }
+    table, table td, table th {
+        margin:10px 50px;
+        border: 3px solid black;
+    }
+    table th {
+        text-align:center;
+    }
+    table td {
+        padding-left:30px;
+        width:20%;
+        text-align: left;
+    }
+    tr td, tr th {
+        width: 120px;
+    }
+    h5 {
+      margin-left: 50px;
+      margin-bottom: -40px;
       font-size: 25px;
       font-weight: 700;
       color: #2a2a2a;
