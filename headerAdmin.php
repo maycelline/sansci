@@ -12,9 +12,9 @@
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="indexAdmin.php" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#">Accept Registration</a></li>
-              <li class="scroll-to-section"><a href="#">Accept Member</a></li>
-              <li class="scroll-to-section"><a href="#">Update Room and Table</a></li>
+              <li class="scroll-to-section"><a href="showCheckOutReserved.php">Checkout Reserve</a></li>
+              <!-- <li class="scroll-to-section"><a href="#">Update Room and Table</a></li> -->
+              <li class="scroll-to-section"><a href="showIncome.php">See Income</a></li>
               <?php
                 if(!$_SESSION){
                     echo '<li class="scroll-to-section"><div class="main-red-button-hover"><a href="index.php#contact">LOGIN</a></div></li>';

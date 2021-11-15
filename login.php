@@ -25,7 +25,7 @@
     if($found && $_SESSION['type'] == 'ADMIN'){
         echo "<script type='text/javascript'>";
         echo "if(confirm('Welcome, admin!')){
-            location.href = 'index.php';
+            location.href = 'indexAdmin.php';
         } else {
             location.href = 'logout.php';
         }";
