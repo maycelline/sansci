@@ -55,7 +55,7 @@
           <br>
           <img src="assets/images/feature.png" style="width:50%; margin-bottom:30px" alt="">
           <br>
-            <h5>Checkout Reserve</h5>
+            <h5>Checkout Reservation</h5>
             <br>
           </div>
         </a></div>

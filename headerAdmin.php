@@ -12,7 +12,7 @@
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="indexAdmin.php" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="showCheckOutReserved.php">Checkout Reserve</a></li>
+              <li class="scroll-to-section"><a href="showCheckOutReserved.php">Checkout Reservation</a></li>
               <!-- <li class="scroll-to-section"><a href="#">Update Room and Table</a></li> -->
               <li class="scroll-to-section"><a href="showIncome.php">See Income</a></li>
               <?php
