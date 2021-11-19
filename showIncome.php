@@ -66,7 +66,7 @@
   <div id="pricing" class="pricing-tables"><h5>Income :</h5><br>
     <?php
         include('connect.php');
-        $sql = "SELECT c.roomType, c.roomPrice, COUNT(DISTINCT(c.roomType)), (c.roomPrice * COUNT(DISTINCT(c.roomType))) AS 'Income' FROM transactions a JOIN roomtransactions b ON a.transactionId = b.transactionId JOIN rooms c ON c.roomId = b.roomId JOIN users d ON d.userId = a.userId WHERE a.status = 1 GROUP BY a.transactionId, c.roomType";
+        $sql = "SELECT c.roomType, c.roomPrice, COUNT(DISTINCT(a.transactionId)), (c.roomPrice * COUNT(DISTINCT(a.transactionId))) AS 'Income' FROM transactions a JOIN roomtransactions b ON a.transactionId = b.transactionId JOIN rooms c ON c.roomId = b.roomId JOIN users d ON d.userId = a.userId WHERE a.status = 1 GROUP BY c.roomType";
         $result = mysqli_query($con,$sql);
         echo "<div style='margin: 0 0 auto;width:93%'>";
         echo "<br><table class='col-lg-12 seperate-4'>
