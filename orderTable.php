@@ -71,7 +71,7 @@
                                                 }
                                             </script>
                                             <fieldset>
-                                                <br><label style="margin-right: 55px;">Room Type : </label>
+                                                <br><label style="margin-right: 17px;">Room Type : </label>
                                                 <select name="roomName" id="roomName"
                                                     onchange="showTableList()" required="">
                                                     <option disabled selected>Choose Room
@@ -84,25 +84,24 @@
                                                     </option>
                                                 </select>
                                             </fieldset>
-
                                             <fieldset>
                                                 <div id="tableChoose">
-                                                    <br><label style="margin-right: 25px;">Capacity : </label><br>
+                                                    <br><label style="margin-right: 32px;">Capacity : </label>
                                                     <select name="capacitySelected" id="capacitySelected" required="">
                                                         <option disable selected>Choose Capacity</option>
                                                     </select>
                                                 </div>
                                             </fieldset>
                                             <fieldset>
-                                                <br><label style="margin-right: 23px;">Booked Date : </label>
+                                                <br><label style="margin-right: 10px;">Booked Date : </label>
                                                 <input type="date" name="bookedDate" id="bookedDate" required="">
                                             </fieldset>
                                             <fieldset>
-                                                <label style="margin-right: 23px;">Booked Time : </label>
+                                                <label style="margin-right: 10px;">Booked Time : </label>
                                                 <input type="time" name="bookedTime" id="bookedTime" value="11:00" required>
                                             </fieldset>
                                             <fieldset>
-                                                <label style="margin-right: 73px;">Payment : </label>
+                                                <label style="margin-right: 40px;">Payment : </label>
                                                 <select name="paymentMethod" id="paymentMethod" required="">
                                                     <option disabled selected>Choose Payment Method
                                                     </option>
@@ -113,7 +112,12 @@
                                                     <option value="GoPay">GoPay
                                                     </option>
                                                 </select>
-                                                <br><br><input type="file" name="file" required style="width: 100%;">
+                                                
+                                            </fieldset>
+                                            <br><br>
+                                            <fieldset>
+                                                <label style="margin-right: 10px;">Upload File : </label>
+                                                <input type="file" name="file" required style="width: 100%;">
                                             </fieldset>
                                             <fieldset>
                                                 <br><button type="submit" id="form-submit" class="main-button"
