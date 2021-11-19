@@ -68,7 +68,7 @@
             <br>
           </div>
         </a></div> -->
-        <div class="col-lg-6 buttonAdmin"><a href="#">
+        <div class="col-lg-6 buttonAdmin"><a href="showIncome.php">
           <div class="item first-item" style="margin: 10px; padding:30px; border: black solid">
           <br>
           <img src="assets/images/piggy-bank.png" style="width:50%; margin-bottom:30px" alt="">

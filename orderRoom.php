@@ -198,15 +198,15 @@
                                                     Coffee Maker
                                                 </fieldset>
                                                 <fieldset>
-                                                    <label style="margin-right: 23px;">Booked Date&nbsp;: </label>
+                                                    <label style="margin-right: 23px;">Booked Date&nbsp;&nbsp;: </label>
                                                     <input type="date" name="bookedDate" id="bookedDate" required="">
                                                 </fieldset>
                                                 <fieldset>
-                                                    <label style="margin-right: 23px;">Booked Time&nbsp;: </label>
+                                                    <label style="margin-right: 23px;">Booked Time&nbsp;&nbsp;: </label>
                                                     <input type="time" name="bookedTime" id="bookedTime" required="">
                                                 </fieldset>
                                                 <fieldset>
-                                                    <label style="margin-right: 45px;">Payment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+                                                    <label style="margin-right: 45px;">Payment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
                                                     <select name="paymentMethod" id="paymentMethod" required="">
                                                         <option disabled>Choose Payment Method
                                                         </option>
@@ -217,7 +217,11 @@
                                                         <option value="GoPay">GoPay
                                                         </option>
                                                     </select>
-                                                    <br><br><input type="file" name="file" required>
+                                                </fieldset>
+                                                <br><br>
+                                                <fieldset>
+                                                    <label style="margin-right: 23px;">Upload File&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;</label>
+                                                    <input type="file" name="file" required="">
                                                 </fieldset>
                                                 <fieldset>
                                                     <br><button type="submit" id="form-submit"

@@ -51,26 +51,26 @@
     <h5>Room Booked :</h5><br>
     <?php
         include('connect.php');
-        $sql = "SELECT a.transactionDate, a.reservedDate, d.firstName, d.lastName, c.roomType FROM transactions a JOIN roomTransactions b ON a.transactionId = b.transactionId JOIN rooms c ON b.roomId = c.roomId JOIN users d ON d.userId = a.userId WHERE c.status = '1' AND a.status = '0' ORDER BY a.reservedDate";
+        $sql = "SELECT a.transactionId, a.transactionDate, a.reservedDate, d.firstName, d.lastName, c.roomType FROM transactions a JOIN roomTransactions b ON a.transactionId = b.transactionId JOIN rooms c ON b.roomId = c.roomId JOIN users d ON d.userId = a.userId WHERE c.status = '1' AND a.status = '0' GROUP BY a.transactionId ORDER BY a.reservedDate";
         $result = mysqli_query($con,$sql);
         echo "<form action='#' method='post' style='margin: 0 0 auto;width:93%'>";
         echo "<br><table class='col-lg-12'>
                   <tr><th>Order Date</th><th>Reserved Date</th><th>Name</th><th>Room Type</th><th>Check Out Reserved</th></tr>";
         while ($row = mysqli_fetch_array($result)) {
-            echo "<tr><td>$row[0]</td><td>$row[1]</td><td>$row[2] $row[3]</td><td>$row[4]</td><td style='text-align: center; padding-left: 0px'><a href='#'>Check Out</a></td></tr>";
+            echo "<tr><td>$row[1]</td><td>$row[2]</td><td>$row[3] $row[4]</td><td>$row[5]</td><td style='text-align: center; padding-left: 0px'><a href='checkoutRoomProcess.php?index='".$row[0]."'>Check Out</a></td></tr>";
         }
         echo "</table></form>";
     ?>
     <h5>Table Booked :</h5><br>
     <?php
         include('connect.php');
-        $sql = "SELECT a.transactionDate, a.reservedDate, d.firstName, d.lastName, c.tableType FROM transactions a JOIN tableTransactions b ON a.transactionId = b.transactionId JOIN tables c ON b.tableId = c.tableId JOIN users d ON d.userId = a.userId WHERE c.status = '1' AND a.status = '0' ORDER BY a.reservedDate";
+        $sql = "SELECT a.transactionId, a.transactionDate, a.reservedDate, d.firstName, d.lastName, c.tableType FROM transactions a JOIN tableTransactions b ON a.transactionId = b.transactionId JOIN tables c ON b.tableId = c.tableId JOIN users d ON d.userId = a.userId WHERE c.status = '1' AND a.status = '0' GROUP BY a.transactionId ORDER BY a.reservedDate";
         $result = mysqli_query($con,$sql);
         echo "<form action='#' method='post' style='margin: 0 0 auto;width:93%'>";
         echo "<br><table class='col-lg-12'>
                   <tr><th>Order Date</th><th>Reserved Date</th><th>Name</th><th>Table Type</th><th>Check Out Reserved</th></tr>";
         while ($row = mysqli_fetch_array($result)) {
-            echo "<tr><td>$row[0]</td><td>$row[1]</td><td>$row[2] $row[3]</td><td>$row[4]</td><td style='text-align: center; padding-left: 0px'><a href='#'>Check Out</a></td></tr>";
+            echo "<tr><td>$row[1]</td><td>$row[2]</td><td>$row[3] $row[4]</td><td>$row[5]</td><td style='text-align: center; padding-left: 0px'><a href='checkoutTableProcess.php?index='".$row[0]."'>Check Out</a></td></tr>";
         }
         echo "</table></form>";
     ?>
@@ -109,6 +109,13 @@
       font-size: 25px;
       font-weight: 700;
       color: #2a2a2a;
+    }
+    a {
+      color: #0d6efd;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #0a58ca;
     }
   </style>
 
