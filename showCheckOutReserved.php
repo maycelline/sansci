@@ -42,12 +42,6 @@
   <?php include('headerAdmin.php')?>
 
   <div id="pricing" class="pricing-tables">
-    <div class="tables-left-dec">
-      <img src="assets/images/tables-left-dec.png" alt="">
-    </div>
-    <div class="tables-right-dec">
-      <img src="assets/images/tables-right-dec.png" alt="">
-    </div>
     <h5>Room Booked :</h5><br>
     <?php
         include('connect.php');
@@ -57,7 +51,7 @@
         echo "<br><table class='col-lg-12'>
                   <tr><th>Order Date</th><th>Reserved Date</th><th>Name</th><th>Room Type</th><th>Check Out Reserved</th></tr>";
         while ($row = mysqli_fetch_array($result)) {
-            echo "<tr><td>$row[1]</td><td>$row[2]</td><td>$row[3] $row[4]</td><td>$row[5]</td><td style='text-align: center; padding-left: 0px'><a href='checkoutRoomProcess.php?index='".$row[0]."'>Check Out</a></td></tr>";
+            echo "<tr><td>$row[1]</td><td>$row[2]</td><td>$row[3] $row[4]</td><td>$row[5]</td><td style='text-align: center; padding-left: 0px'><a href='checkoutRoomProcess.php?index=$row[0]'>Check Out</a></td></tr>";
         }
         echo "</table></form>";
     ?>
@@ -70,7 +64,7 @@
         echo "<br><table class='col-lg-12'>
                   <tr><th>Order Date</th><th>Reserved Date</th><th>Name</th><th>Table Type</th><th>Check Out Reserved</th></tr>";
         while ($row = mysqli_fetch_array($result)) {
-            echo "<tr><td>$row[1]</td><td>$row[2]</td><td>$row[3] $row[4]</td><td>$row[5]</td><td style='text-align: center; padding-left: 0px'><a href='checkoutTableProcess.php?index='".$row[0]."'>Check Out</a></td></tr>";
+            echo "<tr><td>$row[1]</td><td>$row[2]</td><td>$row[3] $row[4]</td><td>$row[5]</td><td style='text-align: center; padding-left: 0px'><a href='checkoutTableProcess.php?index=$row[0]'>Check Out</a></td></tr>";
         }
         echo "</table></form>";
     ?>
