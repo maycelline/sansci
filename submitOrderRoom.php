@@ -32,7 +32,7 @@
         break;
     }
 
-    move_uploaded_file($file["tmp_name"], "assets/images/".$file["name"]);
+    move_uploaded_file($file["tmp_name"], "assets/images/files/".$file["name"]);
     $paymentFile = $file["name"];
 
     if($roomId!=""){
