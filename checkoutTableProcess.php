@@ -9,7 +9,7 @@
         if (mysqli_query($con,$sql)) {
             $sql = "UPDATE tables a JOIN tabletransactions b ON a.tableId = b.tableId JOIN transactions c ON b.transactionId = c.transactionId SET a.status ='0' WHERE c.transactionId = '$index'";
             if(mysqli_query($con, $sql)) {
-                echo "<script type='text/javascript'>alert('Checkout process is done');
+                echo "<script type='text/javascript'>alert('Checkout process is done!');
                 window.location='showCheckOutReserved.php'</script>";
             }
         }
