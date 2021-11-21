@@ -221,7 +221,7 @@
                                                 <br><br>
                                                 <fieldset>
                                                     <label style="margin-right: 23px;">Upload File&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;</label>
-                                                    <input type="file" name="file" required="">
+                                                    <input type="file" name="file" required="" data-validation-required-message="Please insert a file!">
                                                 </fieldset>
                                                 <fieldset>
                                                     <br><button type="submit" id="form-submit"

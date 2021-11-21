@@ -71,10 +71,10 @@
                                                 }
                                             </script>
                                             <fieldset>
-                                                <br><label style="margin-right: 17px;">Room Type : </label>
+                                                <br><label style="margin-right: 17px;">Table Type : </label>
                                                 <select name="roomName" id="roomName"
                                                     onchange="showTableList()" required="">
-                                                    <option disabled selected>Choose Room
+                                                    <option disabled selected>Choose Table
                                                     </option>
                                                     <option value="Co-Working">Co-Working Space
                                                     </option>

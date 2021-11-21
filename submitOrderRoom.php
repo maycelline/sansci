@@ -32,10 +32,10 @@
         break;
     }
 
-    move_uploaded_file($file["tmp_name"], "assets/images/files/".$file["name"]);
-    $paymentFile = $file["name"];
-
     if($roomId!=""){
+        move_uploaded_file($file["tmp_name"], "assets/images/files/".$file["name"]);
+        $paymentFile = $file["name"];
+        
         $sql2 = "INSERT INTO transactions(transactionDate, reservedDate, reservationType, paymentMethod, paymentFile, userId, status) VALUES ('$timestamp', '$bookedDate', 1, '$paymentMethod', '$paymentFile', '$userId', 0)";
         $result = mysqli_query($con, $sql2);
         $sql3 = "UPDATE rooms SET `status` = 1 WHERE roomId = '$roomId'";
