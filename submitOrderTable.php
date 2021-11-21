@@ -31,10 +31,10 @@
         break;
     }
 
-    move_uploaded_file($file["tmp_name"], "assets/images/files/".$file["name"]);
-    $paymentFile = $file["name"];
-
     if($tableId!=""){
+        move_uploaded_file($file["tmp_name"], "assets/images/files/".$file["name"]);
+        $paymentFile = $file["name"];
+        
         if($roomName == 'Co-Working'){
             $sql2 = "INSERT INTO transactions(transactionDate, reservedDate, reservationType, paymentMethod, paymentFile, userId, status) VALUES ('$timestamp', '$bookedDate', 2, '$paymentMethod', '$paymentFile', '$userId', 0)";
         } else {
@@ -43,6 +43,16 @@
         $result = mysqli_query($con, $sql2);
         $sql3 = "UPDATE tables SET `status` = 1 WHERE tableId = '$tableId'";
         $result = mysqli_query($con, $sql3);
+
+        $transactionId;
+        $sql4 = "SELECT * FROM transactions ORDER BY transactionId DESC LIMIT 1";
+        $result = mysqli_query($con, $sql4);
+        while($row = mysqli_fetch_array($result)){
+            $transactionId = $row[0];
+        }
+
+        $sql5 = "INSERT INTO tabletransactions(transactionId, tableId) VALUES ($transactionId, $tableId)";
+        $result = mysqli_query($con, $sql5);
     } else {
         echo "<script type='text/javascript'>";
         echo "confirm('All tables according to your request are fully booked! Please try another table capacity.');";
