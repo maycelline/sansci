@@ -36,3 +36,9 @@
     </div>
   </header>
   <!-- ***** Header Area End ***** -->
+  <style>
+    ul.nav {
+      position: sticky;
+      top: 0;
+    }
+  </style>

@@ -17,7 +17,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-9">
+        <div>
           <div class="subscribe-newsletters footer-item">
             <ul class="misc-class">
               <h4 style="padding-right:25px; text-align: right">Miscellaneous Things Related to the Deboras</h4>
